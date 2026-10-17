@@ -11,8 +11,11 @@
       EDITOR_MAX_BACKUPS: ${EDITOR_MAX_BACKUPS}
       EDITOR_MAX_SNAPSHOTS: ${EDITOR_MAX_SNAPSHOTS}
     volumes:
-      - mu_data:/opt/mu/Data:rw
-      - mu_gameserver_data:/opt/mu/GameServer/Data:rw
+      # Bind the repository data directly. Named volumes could be initialized
+      # first by the editor image (which has no game data), leaving GameServer
+      # with empty/stale files and disconnecting clients immediately at login.
+      - ./MuServer/Data:/opt/mu/Data:rw
+      - ./MuServer/GameServer/DATA:/opt/mu/GameServer/Data:rw
       - mu_editor_backups:/backups
     networks:
       - default
@@ -28,14 +31,12 @@
 
   mu-server:
     volumes:
-      - mu_data:/opt/mu/Data:rw
-      - mu_gameserver_data:/opt/mu/GameServer/Data:rw
+      - ./MuServer/Data:/opt/mu/Data:rw
+      - ./MuServer/GameServer/DATA:/opt/mu/GameServer/Data:rw
 
 networks:
   proxy_net:
     external: true
 
 volumes:
-  mu_data:
-  mu_gameserver_data:
   mu_editor_backups:
