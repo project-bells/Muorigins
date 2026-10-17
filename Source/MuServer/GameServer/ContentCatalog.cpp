@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include <cstdlib>
 #include "ContentCatalog.h"
 #include "CustomPet.h"
 #include "CustomWing.h"
@@ -693,6 +694,18 @@ void CContentCatalog::Build()
 
 void CContentCatalog::Send(int aIndex)
 {
+	// Legacy 0.97K clients do not understand the custom 0xF3/0xEA catalog
+	// packets and close the connection immediately after account login.
+	const char* enabled = std::getenv("CONTENT_CATALOG_ENABLED");
+
+	if (enabled != 0 &&
+		(_stricmp(enabled, "0") == 0 ||
+		 _stricmp(enabled, "false") == 0 ||
+		 _stricmp(enabled, "off") == 0))
+	{
+		return;
+	}
+
 	if (!this->m_Built)
 	{
 		this->Build();

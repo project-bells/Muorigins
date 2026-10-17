@@ -36,6 +36,7 @@ services:
       DB_PASS: ${DB_PASS}
       DB_NAME: ${DB_NAME}
       PUBLIC_IP: ${PUBLIC_IP}
+      CONTENT_CATALOG_ENABLED: ${CONTENT_CATALOG_ENABLED:-1}
     depends_on:
       mysql:
         condition: service_healthy
