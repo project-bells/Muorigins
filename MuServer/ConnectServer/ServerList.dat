@@ -1,4 +1,4 @@
 //ServerCode	ServerName	ServerAddress		ServerPort	ServerType
 0		"Muorigins 1"	"192.168.0.86"		55901		"SHOW"
-1		"Muorigins 2"	"192.168.0.86"		55902		"SHOW"
+1		"Origins"	"192.168.0.86"		55902		"SHOW"
 end
