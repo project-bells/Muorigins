@@ -12,6 +12,10 @@ const BACKUP_DIR = process.env.EDITOR_BACKUP_DIR || path.join(MU_ROOT, '.editor-
 const MAX_BACKUPS = Math.max(0, Number.parseInt(process.env.EDITOR_MAX_BACKUPS || '5', 10) || 5);
 const SNAPSHOT_DIR = path.join(BACKUP_DIR, '_snapshots');
 const MAX_SNAPSHOTS = Math.max(0, Number.parseInt(process.env.EDITOR_MAX_SNAPSHOTS || '5', 10) || 5);
+const RELOAD_TARGETS = String(process.env.EDITOR_RELOAD_TARGETS || 'room1,room2')
+  .split(',')
+  .map((value) => value.trim().toLowerCase())
+  .filter((value) => /^[a-z0-9_-]+$/.test(value));
 
 const ALLOWED_PREFIXES = [
   'Data/',
@@ -362,23 +366,31 @@ app.post('/api/reload', async (req, res) => {
     if (!allowed.includes(target)) {
       throw new Error('Unsupported reload target');
     }
-    const { abs, rel } = normalizeRelativePath('Data/EditorReload.flag');
-    let existing = '';
-    try {
-      existing = await fsp.readFile(abs, 'utf8');
-    } catch {
-      existing = '';
+    const reloadTargets = RELOAD_TARGETS.length ? RELOAD_TARGETS : ['room1'];
+    const paths = [];
+    let queued = [];
+
+    for (const reloadTarget of reloadTargets) {
+      const { abs, rel } = normalizeRelativePath(`Data/EditorReload.${reloadTarget}.flag`);
+      let existing = '';
+      try {
+        existing = await fsp.readFile(abs, 'utf8');
+      } catch {
+        existing = '';
+      }
+      const tokens = existing
+        .split(/[,\s]+/g)
+        .map((value) => value.trim().toLowerCase())
+        .filter(Boolean);
+      if (!tokens.includes(target)) {
+        tokens.push(target);
+      }
+      await fsp.writeFile(abs, tokens.join(',') + '\n', 'utf8');
+      paths.push(rel);
+      queued = Array.from(new Set([...queued, ...tokens]));
     }
-    const tokens = existing
-      .split(/[,\s]+/g)
-      .map((value) => value.trim().toLowerCase())
-      .filter(Boolean);
-    if (!tokens.includes(target)) {
-      tokens.push(target);
-    }
-    const content = tokens.join(',') + '\n';
-    await fsp.writeFile(abs, content, 'utf8');
-    res.json({ ok: true, target, path: rel, queued: tokens });
+
+    res.json({ ok: true, target, path: paths[0], paths, queued });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

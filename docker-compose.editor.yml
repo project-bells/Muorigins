@@ -10,6 +10,7 @@
       EDITOR_BACKUP_DIR: /backups
       EDITOR_MAX_BACKUPS: ${EDITOR_MAX_BACKUPS}
       EDITOR_MAX_SNAPSHOTS: ${EDITOR_MAX_SNAPSHOTS}
+      EDITOR_RELOAD_TARGETS: room1,room2
     volumes:
       # Bind the repository data directly. Named volumes could be initialized
       # first by the editor image (which has no game data), leaving GameServer

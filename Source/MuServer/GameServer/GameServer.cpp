@@ -39,7 +39,14 @@ void CheckEditorReload()
 	}
 	lastCheck = now;
 
-	const char* flagPath = gPath.GetFullPath("EditorReload.flag");
+	char flagName[128] = "EditorReload.flag";
+	const char* reloadId = std::getenv("EDITOR_RELOAD_ID");
+	if (reloadId != 0 && reloadId[0] != 0)
+	{
+		std::snprintf(flagName, sizeof(flagName), "EditorReload.%s.flag", reloadId);
+	}
+
+	const char* flagPath = gPath.GetFullPath(flagName);
 	FILE* file;
 	if (fopen_s(&file, flagPath, "r") != 0)
 	{

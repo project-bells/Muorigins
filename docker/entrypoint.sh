@@ -71,9 +71,9 @@ cd /opt/mu/DataServer
 ./DataServer &
 
 cd /opt/mu/GameServer
-./GameServer &
+EDITOR_RELOAD_ID=room1 ./GameServer &
 
 cd /opt/mu/GameServer2
-./GameServer &
+EDITOR_RELOAD_ID=room2 ./GameServer &
 
 wait -n
