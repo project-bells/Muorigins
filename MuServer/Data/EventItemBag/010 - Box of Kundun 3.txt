@@ -1,7 +1,4 @@
-//======================================
-// NORMAL DROP
-//======================================
-
+// Box of Kundun +3 - Dragon / Legendary / Guardian tier
 0
 //EventName  DropZen  ItemDropRate  ItemDropCount  ItemDropType  Fireworks
 "EventName"  1000  100  1  1  0
@@ -10,10 +7,6 @@ end
 1
 //Item  MinLvl  MaxLvl  Skill  Luck  Opt  Exce  Comment
 end
-
-//======================================
-//ADVANCED DROP
-//======================================
 
 2
 //Index  DropRate
@@ -26,37 +19,37 @@ end
 end
 
 4
+// ExcellentRate 15 = random 1-3 options; 14 = random 1-2 options
 //ItemType  ItemIndex  ItemLevel  ItemGrade  LevelRate  SkillRate  LuckRate  OptionRate  ExcellentRate  Comment
 0  11  0  0  3  5  7  13  15  //Legendary Sword
-3  2  0  0  3  5  7  13  15  //Dragon Lance
+0  15  0  0  3  5  7  13  15  //Giant Sword
+2  4  0  0  3  5  7  13  15  //Crystal Morning Star
+2  5  0  0  3  5  7  13  15  //Crystal Sword
+3  9  0  0  3  5  7  13  15  //Bill of Balrog
+4  14  0  0  3  5  7  13  15  //Aquagold Crossbow
 5  5  0  0  3  5  7  13  15  //Legendary Staff
+5  6  0  0  3  5  7  13  15  //Staff of Resurrection
 6  5  0  0  3  5  7  13  15  //Dragon Slayer Shield
 6  13  0  0  3  5  7  13  15  //Dragon Shield
 6  14  0  0  3  5  7  13  15  //Legendary Shield
 7  1  0  0  3  5  7  13  15  //Dragon Helm
-7  3  0  0  3  5  7  13  15  //Legendary Helm
-7  12  0  0  3  5  7  13  15  //Wind Helm
-7  14  0  0  3  5  7  13  15  //Guardian Helm
-7  16  0  0  3  5  7  13  15  //Black Dragon Helm
 8  1  0  0  3  5  7  13  15  //Dragon Armor
-8  3  0  0  3  5  7  13  15  //Legendary Armor
-8  12  0  0  3  5  7  13  15  //Wind Armor
-8  14  0  0  3  5  7  13  15  //Guardian Armor
-8  16  0  0  3  5  7  13  15  //Black Dragon Armor
 9  1  0  0  3  5  7  13  15  //Dragon Pants
-9  3  0  0  3  5  7  13  15  //Legendary Pants
-9  12  0  0  3  5  7  13  15  //Wind Pants
-9  14  0  0  3  5  7  13  15  //Guardian Pants
-9  16  0  0  3  5  7  13  15  //Black Dragon Pants
 10  1  0  0  3  5  7  13  15  //Dragon Gloves
-10  3  0  0  3  5  7  13  15  //Legendary Gloves
-10  12  0  0  3  5  7  13  15  //Wind Gloves
-10  14  0  0  3  5  7  13  15  //Guardian Gloves
-10  16  0  0  3  5  7  13  15  //Black Dragon Gloves
 11  1  0  0  3  5  7  13  15  //Dragon Boots
+7  3  0  0  3  5  7  13  15  //Legendary Helm
+8  3  0  0  3  5  7  13  15  //Legendary Armor
+9  3  0  0  3  5  7  13  15  //Legendary Pants
+10  3  0  0  3  5  7  13  15  //Legendary Gloves
 11  3  0  0  3  5  7  13  15  //Legendary Boots
-11  12  0  0  3  5  7  13  15  //Wind Boots
+7  14  0  0  3  5  7  13  15  //Guardian Helm
+8  14  0  0  3  5  7  13  15  //Guardian Armor
+9  14  0  0  3  5  7  13  15  //Guardian Pants
+10  14  0  0  3  5  7  13  15  //Guardian Gloves
 11  14  0  0  3  5  7  13  15  //Guardian Boots
-11  16  0  0  3  5  7  13  15  //Black Dragon Boots
+13  8  0  0  3  5  7  13  14  //Ring of Ice (1-2 excellent options)
+13  9  0  0  3  5  7  13  14  //Ring of Poison (1-2 excellent options)
+13  12  0  0  3  5  7  13  14  //Pendant of Lightning (1-2 excellent options)
+13  13  0  0  3  5  7  13  14  //Pendant of Fire (1-2 excellent options)
 end
 
