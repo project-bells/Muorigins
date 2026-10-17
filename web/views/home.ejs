@@ -1,0 +1,48 @@
+<%- include('partials/site_head', { pageTitle, page }) %>
+<main class="flex-grow-1 mu-home">
+  <section class="container quick-path" aria-label="How to start">
+    <article><span>01</span><div><small>JOIN</small><h3>Create an account</h3><p>Register securely and prepare your first hero.</p></div><a href="/register" aria-label="Create account">→</a></article>
+    <article><span>02</span><div><small>INSTALL</small><h3>Get the client</h3><p>Download the complete 0.97K game package.</p></div><a href="/download" aria-label="Download client">→</a></article>
+    <article><span>03</span><div><small>COMPETE</small><h3>Climb the ranks</h3><p>Level, reset and earn your place among the best.</p></div><a href="/rankings" aria-label="View rankings">→</a></article>
+  </section>
+  <section class="container section-block">
+    <div class="section-heading"><div><p>LATEST FROM THE REALM</p><h2>News & announcements</h2></div><a href="/news">View all news →</a></div>
+    <div class="row g-4">
+      <div class="col-12 col-lg-8">
+        <% if (!news || news.length === 0) { %>
+          <div class="content-card empty-state"><span>✦</span><h3>The chronicles begin soon</h3><p>No news has been published yet. Check back for launch details and server updates.</p></div>
+        <% } else { %>
+          <div class="news-grid"><% news.slice(0, 4).forEach(function(item, idx) { %>
+            <article class="news-card <%= idx === 0 ? 'news-card-featured' : '' %>">
+              <% if (item.featuredImage) { %><img src="<%= item.featuredImage %>" alt="" loading="lazy"><% } %>
+              <div class="news-card-body"><div class="news-meta"><span>NEWS</span><time><%= new Date(item.created_at).toLocaleDateString(locale) %></time></div>
+                <% if (!item.hide_title) { %><h3><%= item.title %></h3><% } %><% if (item.excerpt) { %><p><%= item.excerpt %></p><% } %><a href="/news/<%= item.id %>">Read article →</a>
+              </div>
+            </article><% }); %></div>
+        <% } %>
+      </div>
+      <aside class="col-12 col-lg-4">
+        <div class="content-card account-card">
+          <% if (session && session.user) { %>
+            <p class="eyebrow">WELCOME BACK</p><h3><%= session.user.id %></h3><p>Manage your account and characters.</p><a class="btn btn-primary w-100" href="/account">Open account panel</a><a class="account-link" href="/logout">Log out</a>
+          <% } else { %>
+            <p class="eyebrow">PLAYER LOGIN</p><h3>Enter the realm</h3><form action="/login" method="POST">
+              <label for="home-account">Account</label><input id="home-account" type="text" class="form-control" name="account" autocomplete="username" required>
+              <label for="home-password">Password</label><input id="home-password" type="password" class="form-control" name="password" autocomplete="current-password" required>
+              <button type="submit" class="btn btn-primary w-100">Log in</button></form><p class="account-note">New to Muorigins? <a href="/register">Create an account</a></p>
+          <% } %>
+        </div>
+        <div class="content-card event-card"><div class="card-title-row"><div><p class="eyebrow">SERVER SCHEDULE</p><h3>Upcoming events</h3></div><span>UTC+7</span></div>
+          <% if (!events || events.length === 0) { %><p class="muted-copy">No scheduled events are available.</p><% } else { %><div class="event-list"><% events.slice(0, 5).forEach(function(ev) { %><div><span class="event-gem">◆</span><p><strong><%= ev.name %></strong><small><%= ev.nextTime %></small></p><time class="event-countdown" data-countdown="<%= ev.nextAt %>"><%= ev.remainingSeconds %></time></div><% }); %></div><% } %>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="realm-section"><div class="container"><div class="section-heading"><div><p>HALL OF HEROES</p><h2>Top adventurers</h2></div><a href="/rankings">Full rankings →</a></div>
+    <div class="content-card ranking-card"><div class="table-responsive"><table class="table mu-ranking mb-0"><thead><tr><th>Rank</th><th>Character</th><th>Class</th><th>Level</th><th>Reset</th><th>Grand reset</th></tr></thead><tbody>
+      <% if (!ranking || ranking.length === 0) { %><tr><td colspan="6" class="text-center py-5">No ranking data is available yet.</td></tr><% } else { %><% ranking.forEach(function(row, idx) { %><tr><td><span class="rank rank-<%= idx + 1 %>">#<%= idx + 1 %></span></td><td><strong><%= row.Name %></strong></td><td><img src="<%= row.ClassIcon %>" alt="" class="class-icon"> <%= row.ClassName %></td><td><%= row.cLevel %></td><td><%= row.ResetCount %></td><td><%= row.GrandResetCount %></td></tr><% }); %><% } %>
+    </tbody></table></div></div>
+  </div></section>
+  <section class="container final-cta"><div><p>YOUR LEGEND STARTS HERE</p><h2>Return to the world of MU</h2><span>Version 0.97K · Windows client · English interface</span></div><div><a class="btn btn-primary btn-lg" href="/register">Create account</a><a class="btn btn-outline-light btn-lg" href="/download">Download</a></div></section>
+</main>
+<%- include('partials/site_footer') %>

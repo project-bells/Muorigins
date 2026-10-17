@@ -1,0 +1,17 @@
+MuEmu-0.97k-kayito-master/
+kayito_ref/
+web/_template/
+
+# Local secrets and generated dependencies
+.env
+.env.*
+!.env.example
+**/node_modules/
+npm-debug.log*
+
+# Runtime and local build output
+outputs/
+*.log
+*.pid
+.DS_Store
+Thumbs.db
