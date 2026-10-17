@@ -50,6 +50,15 @@ if [ ! -d /opt/mu/GameServer2 ]; then
   sed -i -E "s#^ServerCode=.*#ServerCode=1#" "$ROOM2_CONFIG"
   sed -i -E "s#^ServerPort=.*#ServerPort=55902#" "$ROOM2_CONFIG"
   sed -i -E "s#^ServerMaxUserNumber=.*#ServerMaxUserNumber=60#" "$ROOM2_CONFIG"
+
+  # Room 2 is the non-PvP room. Keep Room 1 unchanged as the PvP room.
+  ROOM2_COMMON="/opt/mu/GameServer2/Data/GameServerInfo - Common.dat"
+  sed -i -E "s#^NonPK=.*#NonPK=1#" "$ROOM2_COMMON"
+
+  # Do not re-enable PvP inside the room's standard events.
+  ROOM2_EVENT="/opt/mu/GameServer2/Data/GameServerInfo - Event.dat"
+  sed -i -E "s#^BloodCastleAllowPK=.*#BloodCastleAllowPK=0#" "$ROOM2_EVENT"
+  sed -i -E "s#^DevilSquareAllowPK=.*#DevilSquareAllowPK=0#" "$ROOM2_EVENT"
 fi
 
 cd /opt/mu/ConnectServer

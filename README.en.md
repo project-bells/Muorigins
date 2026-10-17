@@ -114,7 +114,9 @@ characters, guilds, warehouses and the MySQL database while maintaining
 independent world/event state:
 
 - `Muorigins 1`: server code `0`, TCP `55901`, maximum `60` players.
-- `Origins`: server code `1`, TCP `55902`, maximum `60` players.
+- `Origins`: server code `1`, TCP `55902`, maximum `60` players, non-PvP.
+
+New level-1 characters start with 300 unspent stat points and 20,000,000 Zen.
 
 The total configured capacity is 120 concurrent players. Configure both game
 ports in the Google Cloud firewall. The game hostname must use DNS-only mode in
