@@ -37,6 +37,7 @@ void CMonsterSetBase::Load(const char* path)
 	}
 
 	this->m_count = 0;
+	int section2MonsterCount = 0;
 
 	try
 	{
@@ -97,6 +98,13 @@ void CMonsterSetBase::Load(const char* path)
 				{
 					int count = lpReadScript->GetAsNumber();
 
+					// Section 1 contains the normal monster spots. Increase only
+					// those spawns by 50%; section 3 is reserved for events.
+					if (section == 1)
+					{
+						count += (count / 2);
+					}
+
 					if (section == 3)
 					{
 						info.Value = lpReadScript->GetAsNumber();
@@ -110,6 +118,13 @@ void CMonsterSetBase::Load(const char* path)
 				else
 				{
 					this->SetInfo(info);
+
+					// Section 2 contains individually placed normal monsters.
+					// Add one extra monster for every two definitions (+50%).
+					if (section == 2 && (++section2MonsterCount % 2) == 0)
+					{
+						this->SetInfo(info);
+					}
 				}
 			}
 		}

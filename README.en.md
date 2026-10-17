@@ -121,6 +121,10 @@ without gaining murderer status.
 
 New level-1 characters start with 300 unspent stat points and 20,000,000 Zen.
 
+Gameplay rates use x100 experience, 40% jewel drop rates and 20% excellent
+item drop rates. Normal monster spawns are increased by 50% on every map;
+NPCs, traps and event-specific spawns are not multiplied.
+
 The total configured capacity is 120 concurrent players. Configure both game
 ports in the Google Cloud firewall. The game hostname must use DNS-only mode in
 Cloudflare; the normal Cloudflare HTTP proxy does not proxy MU game traffic.
