@@ -15,6 +15,7 @@
 240	0	0	147	145	1	// Safety Guardian
 240	0	0	146	110	3	// Safety Guardian
 236	0	0	130	127	3	// Golden Archer
+235	0	0	133	127	3	// MuOrigins Buffer (Sebina model)
 249	0	10	131	88	1	// Berdysh Guard
 249	0	20	173	125	3	// Berdysh Guard
 249	0	20	94	125	7	// Berdysh Guard
@@ -42,6 +43,7 @@ end
 247	2	20	169	39	7	// Archer Guard
 241	2	0	215	45	1	// Royal Guard Captain Lorence
 240	2	0	218	63	2	// Safety Guardian
+235	2	0	222	63	2	// MuOrigins Buffer (Sebina model)
 end
 
 //=========================================================================================================================================
@@ -55,6 +57,7 @@ end
 240	3	0	172	96	3	// Safety Guardian
 238	3	0	180	103	1	// Chaos Goblin
 236	3	0	169	109	3	// Golden Archer
+235	3	0	176	112	3	// MuOrigins Buffer (Sebina model)
 end
 
 //======================================//
@@ -73,6 +76,7 @@ end
 0
 //Mob\tMapNum\tRange\tPosX\tPosY\tDirect\tName
 253	7	0	23	25	1	// Potion Girl Amy
+235	7	0	26	25	1	// MuOrigins Buffer (Sebina model)
 end
 //		TRAPS			//
 //======================================//

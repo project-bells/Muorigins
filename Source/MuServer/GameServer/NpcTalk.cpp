@@ -39,6 +39,13 @@ bool CNpcTalk::NpcTalk(LPOBJ lpNpc, LPOBJ lpObj)
 		return 1;
 	}
 
+	if (this->IsMuOriginsBuffer(lpNpc) != 0)
+	{
+		this->NpcMuOriginsBuffer(lpNpc, lpObj);
+
+		return 1;
+	}
+
 	if (gQuest.NpcTalk(lpNpc, lpObj) != 0)
 	{
 		return 1;
@@ -122,6 +129,19 @@ bool CNpcTalk::NpcTalk(LPOBJ lpNpc, LPOBJ lpObj)
 	}
 
 	return 1;
+}
+
+bool CNpcTalk::IsMuOriginsBuffer(LPOBJ lpNpc)
+{
+	if (lpNpc->Class != 235)
+	{
+		return false;
+	}
+
+	return ((lpNpc->Map == 0 && lpNpc->X == 133 && lpNpc->Y == 127) ||
+		(lpNpc->Map == 2 && lpNpc->X == 222 && lpNpc->Y == 63) ||
+		(lpNpc->Map == 3 && lpNpc->X == 176 && lpNpc->Y == 112) ||
+		(lpNpc->Map == 7 && lpNpc->X == 26 && lpNpc->Y == 25));
 }
 
 void CNpcTalk::NpcAngelKing(LPOBJ lpNpc, LPOBJ lpObj)
@@ -223,6 +243,77 @@ void CNpcTalk::NpcGuildMaster(LPOBJ lpNpc, LPOBJ lpObj)
 void CNpcTalk::NpcGuard(LPOBJ lpNpc, LPOBJ lpObj)
 {
 	GCChatTargetSend(lpObj, lpNpc->Index, gMessage.GetTextMessage(27, lpObj->Lang));
+}
+
+void CNpcTalk::NpcMuOriginsBuffer(LPOBJ lpNpc, LPOBJ lpObj)
+{
+	const int MaxLevel = 250;
+	const int Duration = 30 * 60;
+
+	if (lpObj->Level > MaxLevel)
+	{
+		char message[] = "These blessings are available up to level 250.";
+
+		GCChatTargetSend(lpObj, lpNpc->Index, message);
+
+		return;
+	}
+
+	if (gEffectManager.CheckEffect(lpObj, EFFECT_GREATER_DAMAGE) != 0 ||
+		gEffectManager.CheckEffect(lpObj, EFFECT_GREATER_DEFENSE) != 0 ||
+		gEffectManager.CheckEffect(lpObj, EFFECT_GREATER_LIFE) != 0)
+	{
+		char message[] = "Your blessing is still active. Return when it expires.";
+
+		GCChatTargetSend(lpObj, lpNpc->Index, message);
+
+		return;
+	}
+
+	int damageBase = lpObj->PhysiDamageMax;
+
+	if (lpObj->MagicDamageMax > damageBase)
+	{
+		damageBase = lpObj->MagicDamageMax;
+	}
+
+	int damageBonus = (damageBase * 15) / 100;
+	int defenseBonus = (lpObj->Defense * 15) / 100;
+
+	damageBonus = ((damageBonus < 1) ? 1 : ((damageBonus > 65535) ? 65535 : damageBonus));
+	defenseBonus = ((defenseBonus < 1) ? 1 : ((defenseBonus > 65535) ? 65535 : defenseBonus));
+
+	bool damageAdded = gEffectManager.AddEffect(lpObj, 1, EFFECT_GREATER_DAMAGE, Duration, damageBonus, 0, 0, 0);
+	bool defenseAdded = gEffectManager.AddEffect(lpObj, 1, EFFECT_GREATER_DEFENSE, Duration, defenseBonus, 0, 0, 0);
+	bool lifeAdded = gEffectManager.AddEffect(lpObj, 1, EFFECT_GREATER_LIFE, Duration, 10, 0, 0, 0);
+
+	if (damageAdded == 0 || defenseAdded == 0 || lifeAdded == 0)
+	{
+		if (damageAdded != 0)
+		{
+			gEffectManager.DelEffect(lpObj, EFFECT_GREATER_DAMAGE);
+		}
+
+		if (defenseAdded != 0)
+		{
+			gEffectManager.DelEffect(lpObj, EFFECT_GREATER_DEFENSE);
+		}
+
+		if (lifeAdded != 0)
+		{
+			gEffectManager.DelEffect(lpObj, EFFECT_GREATER_LIFE);
+		}
+
+		char message[] = "The blessing could not be applied. Please try again.";
+
+		GCChatTargetSend(lpObj, lpNpc->Index, message);
+
+		return;
+	}
+
+	char message[] = "Blessing granted: Damage +15%, Defense +15%, Life +10% for 30 minutes.";
+
+	GCChatTargetSend(lpObj, lpNpc->Index, message);
 }
 
 void CNpcTalk::CGNpcTalkRecv(PMSG_NPC_TALK_RECV* lpMsg, int aIndex)

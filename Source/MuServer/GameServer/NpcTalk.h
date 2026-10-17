@@ -53,6 +53,8 @@ public:
 
 	bool NpcTalk(LPOBJ lpNpc, LPOBJ lpObj);
 
+	bool IsMuOriginsBuffer(LPOBJ lpNpc);
+
 	void NpcAngelKing(LPOBJ lpNpc, LPOBJ lpObj);
 
 	void NpcAngelMessenger(LPOBJ lpNpc, LPOBJ lpObj);
@@ -70,6 +72,8 @@ public:
 	void NpcGuildMaster(LPOBJ lpNpc, LPOBJ lpObj);
 
 	void NpcGuard(LPOBJ lpNpc, LPOBJ lpObj);
+
+	void NpcMuOriginsBuffer(LPOBJ lpNpc, LPOBJ lpObj);
 
 	void CGNpcTalkRecv(PMSG_NPC_TALK_RECV* lpMsg, int aIndex);
 
