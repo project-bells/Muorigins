@@ -4,8 +4,8 @@ LABEL org.opencontainers.image.version="0.97.20" org.opencontainers.image.source
 
 WORKDIR /app
 
-COPY package.json package-lock.json* ./
-RUN npm install --omit=dev
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
 
 COPY . .
 
