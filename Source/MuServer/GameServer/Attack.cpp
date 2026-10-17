@@ -841,11 +841,6 @@ bool CAttack::CheckPlayerTarget(LPOBJ lpObj, LPOBJ lpTarget)
 		return false;
 	}
 
-	if (lpObj->Level <= 5 || lpTarget->Level <= 5)
-	{
-		return false;
-	}
-
 	if (gMapManager.GetMapNonPK(lpTarget->Map) != 0)
 	{
 		return false;

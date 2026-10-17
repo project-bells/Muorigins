@@ -113,7 +113,7 @@ The source compose build starts two GameServer processes that share accounts,
 characters, guilds, warehouses and the MySQL database while maintaining
 independent world/event state:
 
-- `Muorigins 1`: server code `0`, TCP `55901`, maximum `60` players.
+- `Muorigins 1`: server code `0`, TCP `55901`, maximum `60` players, PvP from level 1 outside safe zones.
 - `Origins`: server code `1`, TCP `55902`, maximum `60` players, non-PvP.
 
 New level-1 characters start with 300 unspent stat points and 20,000,000 Zen.
