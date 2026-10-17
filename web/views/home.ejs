@@ -1,96 +1,57 @@
 <%- include('partials/site_head', { pageTitle, page }) %>
-<main class="flex-grow-1 mu-home">
-  <section class="container quick-path" aria-label="How to start">
-    <article><span>01</span><div><small>JOIN</small><h3>Create an account</h3><p>Register and prepare your first hero.</p></div><a href="/register" aria-label="Create account">→</a></article>
-    <article><span>02</span><div><small>INSTALL</small><h3>Get the client</h3><p>Download the complete English 0.97K client.</p></div><a href="/download" aria-label="Download client">→</a></article>
-    <article><span>03</span><div><small>CONQUER</small><h3>Choose your realm</h3><p>Fight in PvP or progress in the Non-PvP room.</p></div><a href="#realms" aria-label="Explore the realms">→</a></article>
-  </section>
-
-  <section class="container section-block server-overview" id="server-info">
-    <div class="section-heading server-heading"><div><p>THE CLASSIC FORMULA</p><h2>MuOrigins 0.97K · x100</h2></div><span class="season-badge">MAXIMUM 10 RESETS</span></div>
-    <div class="server-facts">
-      <article><small>EXPERIENCE</small><strong>x100</strong><p>Fast classic progression with the original 0.97K atmosphere.</p></article>
-      <article><small>NEW CHARACTER</small><strong>300 points</strong><p>Every new hero also starts with 20,000,000 Zen.</p></article>
-      <article><small>RESET SYSTEM</small><strong>10 resets</strong><p>Reset at level 400 for 1,000,000 Zen per cycle.</p></article>
-      <article><small>LANGUAGE</small><strong>English</strong><p>The website and game presentation are designed around English.</p></article>
-    </div>
-  </section>
-
-  <section class="class-section" id="classes">
+<main class="forge-main">
+  <section class="forge-section" id="server-info">
     <div class="container">
-      <div class="section-heading"><div><p>CHOOSE YOUR PATH</p><h2>Four legends. Four ways to conquer.</h2></div><span class="section-note">Balanced for PvP &amp; PvM</span></div>
-      <div class="class-grid">
-        <article class="class-card class-dw"><img src="/assets/images/classes/dw.svg" alt="Dark Wizard"><div><small>ARCANE CASTER</small><h3>Dark Wizard</h3><p>Controls the battlefield with powerful ranged magic and wide-area spells.</p><ul><li>Excellent area damage</li><li>Ranged magical combat</li><li>Damage profile: 105%</li></ul></div></article>
-        <article class="class-card class-dk"><img src="/assets/images/classes/dk.svg" alt="Dark Knight"><div><small>FRONTLINE WARRIOR</small><h3>Dark Knight</h3><p>A durable melee fighter built for direct pressure and close-range duels.</p><ul><li>Strong survivability</li><li>Powerful melee skills</li><li>Damage profile: 100%</li></ul></div></article>
-        <article class="class-card class-fe"><img src="/assets/images/classes/elf.svg" alt="Fairy Elf"><div><small>RANGED SUPPORT</small><h3>Fairy Elf</h3><p>Combines precise bow attacks with valuable support magic and agility.</p><ul><li>Fast ranged attacks</li><li>Party support abilities</li><li>Damage profile: 110%</li></ul></div></article>
-        <article class="class-card class-mg"><img src="/assets/images/classes/mg.svg" alt="Magic Gladiator"><div><small>HYBRID CHAMPION</small><h3>Magic Gladiator</h3><p>Blends swordplay and magic with seven stat points gained per level.</p><ul><li>Physical or magic builds</li><li>Flexible progression</li><li>Damage profile: 95%</li></ul></div></article>
+      <div class="forge-heading"><span>01 · SERVER CODEX</span><h2>THE REALM, AT A GLANCE</h2><p>Everything that defines the MuOrigins journey—without hidden rules or inflated promises.</p></div>
+      <div class="forge-bento">
+        <article class="bento-card bento-rate"><div class="bento-icon"><i data-lucide="swords"></i></div><span>EXPERIENCE RATE</span><strong>x100</strong><h3>Classic combat. Faster progression.</h3><p>Advance through the original 0.97K world at a focused pace while every milestone still matters.</p><div class="rate-runes"><b>0.97K</b><b>ENGLISH</b><b>4 CLASSES</b></div></article>
+        <article class="bento-card bento-start"><i data-lucide="sparkles"></i><span>NEW HERO REWARD</span><strong>300 POINTS</strong><p>Plus <em>20,000,000 Zen</em> the moment your character begins.</p></article>
+        <article class="bento-card"><i data-lucide="rotate-ccw"></i><span>RESET SYSTEM</span><h3>10 MAXIMUM RESETS</h3><p>Level 400 · 1,000,000 Zen per reset.</p></article>
+        <article class="bento-card bento-siege"><i data-lucide="castle"></i><span>CASTLE WARFARE</span><h3>FIGHT FOR DOMINION</h3><p>Gather your guild, forge alliances and prepare to claim the realm.</p></article>
+        <article class="bento-card"><i data-lucide="skull"></i><span>BOSS HUNTING</span><h3>RARE DROPS AWAIT</h3><p>Excellent item chance 20% with drops up to the Red Dragon tier.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="container section-block realm-overview" id="realms">
-    <div class="section-heading"><div><p>TWO ROOMS, ONE ADVENTURE</p><h2>Play your way</h2></div><span class="section-note">60 players per room</span></div>
-    <div class="realm-grid">
-      <article class="realm-card realm-pvp"><div class="realm-number">01</div><div><span class="realm-type">PVP REALM</span><h3>Muorigins 1</h3><p>Open-world player combat is enabled outside safe zones. Lost Tower is a special PvP zone where defeating another player does not add murderer status.</p><div class="realm-tags"><span>Open PvP</span><span>Lost Tower PK-Free</span><span>60 slots</span></div></div></article>
-      <article class="realm-card realm-peace"><div class="realm-number">02</div><div><span class="realm-type">NON-PVP REALM</span><h3>Origins</h3><p>Progress, hunt and explore without player-versus-player combat. Blood Castle and Devil Square also remain Non-PvP in this room.</p><div class="realm-tags"><span>Non-PvP</span><span>Safe progression</span><span>60 slots</span></div></div></article>
-    </div>
-  </section>
-
-  <section class="loot-section">
-    <div class="container loot-layout">
-      <div class="loot-intro"><p class="eyebrow">GEAR &amp; ECONOMY</p><h2>Build your hero faster</h2><p>Core progression items are available through shops and monster hunting, while the best equipment still rewards adventure.</p></div>
-      <div class="loot-grid">
-        <article><span>◆</span><h3>Box +1, +2 &amp; +3</h3><p>Progression boxes are available in shops.</p></article>
-        <article><span>✦</span><h3>Bless &amp; Soul</h3><p>Jewel of Bless and Jewel of Soul are available for purchase.</p></article>
-        <article><span>▲</span><h3>Red Dragon tier</h3><p>Monster drops reach up to the Red Dragon equipment class.</p></article>
-        <article><span>20%</span><h3>Excellent drops</h3><p>Excellent item drop rate is configured at 20%.</p></article>
+  <section class="forge-section forge-realms" id="realms">
+    <div class="container">
+      <div class="forge-heading"><span>02 · CHOOSE YOUR REALM</span><h2>TWO PATHS. ONE LEGEND.</h2><p>Each room supports up to 60 warriors and shares the same classic world.</p></div>
+      <div class="forge-realm-grid">
+        <article class="forge-realm realm-war"><div class="realm-index">I</div><div class="realm-copy"><span><b></b> PVP REALM</span><h3>MUORIGINS 1</h3><p>Open player combat outside safe zones. Lost Tower is a special conflict zone: fight freely without gaining murderer status.</p><ul><li><i data-lucide="swords"></i> Open PvP</li><li><i data-lucide="map-pin"></i> PK-free Lost Tower</li><li><i data-lucide="users"></i> 60 player capacity</li></ul></div></article>
+        <article class="forge-realm realm-peace"><div class="realm-index">II</div><div class="realm-copy"><span><b></b> NON-PVP REALM</span><h3>ORIGINS</h3><p>Explore, progress and hunt without player combat. Blood Castle and Devil Square remain protected in this room.</p><ul><li><i data-lucide="shield-check"></i> Non-PvP</li><li><i data-lucide="gem"></i> Safe progression</li><li><i data-lucide="users"></i> 60 player capacity</li></ul></div></article>
       </div>
     </div>
   </section>
 
-  <section class="container section-block command-section" id="commands">
-    <div class="section-heading"><div><p>PLAYER COMMANDS</p><h2>Everything you need in chat</h2></div><span class="section-note">Type commands in-game</span></div>
-    <div class="command-panel"><div class="command-grid">
-      <article><code>/str &lt;amount&gt;</code><span>Add Strength</span></article>
-      <article><code>/agi &lt;amount&gt;</code><span>Add Agility</span></article>
-      <article><code>/vit &lt;amount&gt;</code><span>Add Vitality</span></article>
-      <article><code>/ene &lt;amount&gt;</code><span>Add Energy</span></article>
-      <article><code>/post &lt;message&gt;</code><span>Send a global message</span></article>
-      <article class="command-reset"><code>/reset</code><span>Level 400 · Maximum 10 · Cost 1,000,000 Zen</span></article>
-    </div></div>
-  </section>
-
-  <section class="container section-block news-community">
-    <div class="section-heading"><div><p>LATEST FROM THE REALM</p><h2>News &amp; community</h2></div><a href="/news">View all news →</a></div>
-    <div class="row g-4">
-      <div class="col-12 col-lg-8">
-        <% if (!news || news.length === 0) { %>
-          <div class="content-card empty-state"><span>✦</span><h3>The chronicles begin soon</h3><p>No news has been published yet. Check back for launch details and server updates.</p></div>
-        <% } else { %>
-          <div class="news-grid"><% news.slice(0, 4).forEach(function(item, idx) { %>
-            <article class="news-card <%= idx === 0 ? 'news-card-featured' : '' %>">
-              <% if (item.featuredImage) { %><img src="<%= item.featuredImage %>" alt="" loading="lazy"><% } %>
-              <div class="news-card-body"><div class="news-meta"><span>NEWS</span><time><%= new Date(item.created_at).toLocaleDateString(locale) %></time></div><% if (!item.hide_title) { %><h3><%= item.title %></h3><% } %><% if (item.excerpt) { %><p><%= item.excerpt %></p><% } %><a href="/news/<%= item.id %>">Read article →</a></div>
-            </article><% }); %></div>
-        <% } %>
-      </div>
-      <aside class="col-12 col-lg-4">
-        <div class="content-card account-card">
-          <% if (session && session.user) { %>
-            <p class="eyebrow">WELCOME BACK</p><h3><%= session.user.id %></h3><p>Manage your account and characters.</p><a class="btn btn-primary w-100" href="/account">Open account panel</a><a class="account-link" href="/logout">Log out</a>
-          <% } else { %>
-            <p class="eyebrow">PLAYER LOGIN</p><h3>Enter the realm</h3><form action="/login" method="POST"><label for="home-account">Account</label><input id="home-account" type="text" class="form-control" name="account" autocomplete="username" required><label for="home-password">Password</label><input id="home-password" type="password" class="form-control" name="password" autocomplete="current-password" required><button type="submit" class="btn btn-primary w-100">Log in</button></form><p class="account-note">New to Muorigins? <a href="/register">Create an account</a></p>
-          <% } %>
+  <section class="forge-section forge-classes" id="classes">
+    <div class="container">
+      <div class="forge-heading"><span>03 · HEROES OF THE CONTINENT</span><h2>CHOOSE YOUR DESTINY</h2><p>Four iconic paths, tuned for both PvP encounters and monster hunting.</p></div>
+      <div class="class-stage" data-class-stage>
+        <div class="class-portrait"><div class="portrait-aura"></div><img data-class-image src="/assets/images/classes/dk.svg" alt="Dark Knight"><span data-class-number>01</span></div>
+        <div class="class-details"><span data-class-role>FRONTLINE WARRIOR</span><h3 data-class-name>DARK KNIGHT</h3><p data-class-copy>A relentless melee champion built for close-range pressure, durability and decisive duels.</p><div class="class-traits" data-class-traits><span>MELEE FORCE</span><span>HIGH DEFENSE</span><span>100% PROFILE</span></div><a href="/register"><span data-class-cta>BEGIN AS DARK KNIGHT</span> <i data-lucide="arrow-up-right"></i></a></div>
+        <div class="class-tabs" role="tablist" aria-label="Character classes">
+          <button class="active" type="button" role="tab" aria-selected="true" data-name="DARK KNIGHT" data-role="FRONTLINE WARRIOR" data-copy="A relentless melee champion built for close-range pressure, durability and decisive duels." data-image="/assets/images/classes/dk.svg" data-number="01" data-traits="MELEE FORCE|HIGH DEFENSE|100% PROFILE"><span>01</span>DARK KNIGHT</button>
+          <button type="button" role="tab" aria-selected="false" data-name="DARK WIZARD" data-role="ARCANE CASTER" data-copy="Command the battlefield from range with destructive magic and devastating area attacks." data-image="/assets/images/classes/dw.svg" data-number="02" data-traits="ARCANE POWER|AREA DAMAGE|105% PROFILE"><span>02</span>DARK WIZARD</button>
+          <button type="button" role="tab" aria-selected="false" data-name="FAIRY ELF" data-role="RANGED SUPPORT" data-copy="Strike with precision, move with speed and strengthen allies through ancient elven magic." data-image="/assets/images/classes/elf.svg" data-number="03" data-traits="RANGED ATTACK|PARTY SUPPORT|110% PROFILE"><span>03</span>FAIRY ELF</button>
+          <button type="button" role="tab" aria-selected="false" data-name="MAGIC GLADIATOR" data-role="HYBRID CHAMPION" data-copy="Blend swordplay and sorcery into a versatile build with seven stat points gained each level." data-image="/assets/images/classes/mg.svg" data-number="04" data-traits="HYBRID BUILD|7 PTS / LEVEL|95% PROFILE"><span>04</span>MAGIC GLADIATOR</button>
         </div>
-        <div class="content-card event-card"><div class="card-title-row"><div><p class="eyebrow">SERVER SCHEDULE</p><h3>Upcoming events</h3></div><span>UTC+7</span></div><% if (!events || events.length === 0) { %><p class="muted-copy">No scheduled events are available.</p><% } else { %><div class="event-list"><% events.slice(0, 5).forEach(function(ev) { %><div><span class="event-gem">◆</span><p><strong><%= ev.name %></strong><small><%= ev.nextTime %></small></p><time class="event-countdown" data-countdown="<%= ev.nextAt %>"><%= ev.remainingSeconds %></time></div><% }); %></div><% } %></div>
-      </aside>
+      </div>
     </div>
   </section>
 
-  <section class="realm-section hall-section"><div class="container"><div class="section-heading"><div><p>HALL OF HEROES</p><h2>Top adventurers</h2></div><a href="/rankings">Full rankings →</a></div>
-    <div class="content-card ranking-card"><div class="table-responsive"><table class="table mu-ranking mb-0"><thead><tr><th>Rank</th><th>Character</th><th>Class</th><th>Level</th><th>Reset</th><th>Grand reset</th></tr></thead><tbody><% if (!ranking || ranking.length === 0) { %><tr><td colspan="6" class="text-center py-5">No ranking data is available yet.</td></tr><% } else { %><% ranking.forEach(function(row, idx) { %><tr><td><span class="rank rank-<%= idx + 1 %>">#<%= idx + 1 %></span></td><td><strong><%= row.Name %></strong></td><td><img src="<%= row.ClassIcon %>" alt="" class="class-icon"> <%= row.ClassName %></td><td><%= row.cLevel %></td><td><%= row.ResetCount %></td><td><%= row.GrandResetCount %></td></tr><% }); %><% } %></tbody></table></div></div>
-  </div></section>
+  <section class="forge-section forge-arsenal">
+    <div class="container">
+      <div class="forge-heading"><span>04 · FORGE &amp; ECONOMY</span><h2>EARN POWER. TEMPER FATE.</h2><p>Clear progression rules put every upgrade in your hands.</p></div>
+      <div class="arsenal-grid"><article><i data-lucide="package-open"></i><span>SHOP</span><h3>BOX +1 / +2 / +3</h3><p>Progression boxes available from in-game shops.</p></article><article><i data-lucide="gem"></i><span>JEWELS</span><h3>BLESS &amp; SOUL</h3><p>Core upgrade jewels available for purchase.</p></article><article><i data-lucide="anvil"></i><span>UPGRADE</span><h3>75% TO +9</h3><p>+7, +8 and +9 at 75%. +10 and +11 at 50%.</p></article><article><i data-lucide="feather"></i><span>WINGS</span><h3>50% / 35%</h3><p>First wings at 50%. Second wings at 35%.</p></article></div>
+    </div>
+  </section>
 
-  <section class="container final-cta"><div><p>YOUR LEGEND STARTS HERE</p><h2>Return to the world of MU</h2><span>Version 0.97K · x100 EXP · English client · Two realms</span></div><div><a class="btn btn-primary btn-lg" href="/register">Create account</a><a class="btn btn-outline-light btn-lg" href="/download">Download</a></div></section>
+  <section class="forge-section forge-commands" id="commands"><div class="container command-layout"><div class="forge-heading"><span>05 · PLAYER COMMANDS</span><h2>POWER AT YOUR FINGERTIPS</h2><p>Use these commands directly in game chat.</p><a class="forge-text-link" href="/download">GET THE CLIENT <i data-lucide="arrow-right"></i></a></div><div class="terminal-frame"><div class="terminal-top"><i></i><i></i><i></i><span>MUORIGINS COMMAND CONSOLE</span></div><div class="terminal-body"><p><code>/str &lt;amount&gt;</code><span>Add Strength</span></p><p><code>/agi &lt;amount&gt;</code><span>Add Agility</span></p><p><code>/vit &lt;amount&gt;</code><span>Add Vitality</span></p><p><code>/ene &lt;amount&gt;</code><span>Add Energy</span></p><p><code>/post &lt;message&gt;</code><span>Broadcast a global message</span></p><p class="reset"><code>/reset</code><span>Level 400 · Max 10 · 1M Zen</span></p></div></div></div></section>
+
+  <section class="forge-section forge-community" id="community"><div class="container"><div class="forge-heading heading-row"><div><span>06 · CHRONICLES</span><h2>NEWS FROM THE REALM</h2></div><a href="/news">VIEW ALL NEWS <i data-lucide="arrow-up-right"></i></a></div><div class="chronicle-grid">
+    <% if (!news || news.length === 0) { %><article class="chronicle-empty"><i data-lucide="scroll-text"></i><span>THE CHRONICLES AWAIT</span><h3>A NEW ERA IS ABOUT TO BEGIN</h3><p>Announcements, events and server updates will appear here.</p></article><% } else { %><% news.slice(0, 3).forEach(function(item, idx) { %><article class="chronicle-card <%= idx === 0 ? 'featured' : '' %>"><% if (item.featuredImage) { %><img src="<%= item.featuredImage %>" alt="" loading="lazy"><% } %><div><span>NEWS · <%= new Date(item.created_at).toLocaleDateString(locale) %></span><% if (!item.hide_title) { %><h3><%= item.title %></h3><% } %><% if (item.excerpt) { %><p><%= item.excerpt %></p><% } %><a href="/news/<%= item.id %>">READ CHRONICLE <i data-lucide="arrow-right"></i></a></div></article><% }); %><% } %>
+  </div></div></section>
+
+  <section class="forge-final"><div class="forge-final-glow"></div><div class="container"><img src="/assets/images/muorigins-mark.svg" alt=""><span>THE GATES ARE OPEN</span><h2>YOUR LEGEND<br>BEGINS NOW</h2><p>Version 0.97K · x100 EXP · English client · Two realms</p><div><a class="forge-btn forge-btn-primary" href="/register"><i data-lucide="shield-plus"></i><span>CREATE ACCOUNT<small>Free to play</small></span></a><a class="forge-btn forge-btn-ghost" href="/download"><i data-lucide="download"></i><span>DOWNLOAD<small>English client</small></span></a></div></div></section>
 </main>
 <%- include('partials/site_footer') %>

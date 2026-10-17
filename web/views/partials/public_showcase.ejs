@@ -1,29 +1,30 @@
-<% if (siteSettings.theme !== "classic" || page === "home") { %>
-<div class="container mt-5 <%= siteSettings.theme !== 'classic' ? 'home-showcase' : '' %> <%= page === 'home' ? 'mu-hero' : '' %>">
-    <%- include('theme_hero') %>
-    <% if (page === 'home') { %>
-    <div class="row align-items-end hero-content">
-      <div class="col-12 col-lg-7">
-        <p class="hero-kicker">THE ORIGINAL ADVENTURE RETURNS</p>
-        <h1>MuOrigins <span>0.97K x100</span></h1>
-        <p class="hero-copy">Four classic classes, two distinct realms and focused progression. Begin with 300 points and 20 million Zen.</p>
-        <div class="d-flex flex-wrap gap-3 hero-actions">
-          <a class="btn btn-primary btn-lg" href="/register">Create account</a>
-          <a class="btn btn-outline-light btn-lg" href="/download">Download client</a>
-        </div>
-      </div>
-      <div class="col-12 col-lg-5">
-        <div class="server-status-card">
-          <div class="status-heading"><span class="status-dot"></span><span>SERVER ONLINE</span><strong>Muorigins</strong></div>
-          <div class="status-grid">
-            <div><small>Players online</small><strong id="players-online"><%= playersOnline %></strong></div>
-            <div><small>Version / EXP</small><strong>0.97K · x100</strong></div>
-            <div><small>Server time</small><strong id="server-time" data-tz="<%= timeZone || '' %>"><%= serverTime %></strong></div>
-            <div><small>Your time</small><strong id="user-time">--:--:--</strong></div>
-          </div>
-        </div>
+<% if (page === 'home') { %>
+<section class="forge-hero" aria-labelledby="hero-title">
+  <div class="forge-vignette"></div><div class="forge-grain"></div><div class="forge-embers" aria-hidden="true"></div>
+  <div class="container forge-hero-inner">
+    <div class="forge-hero-copy">
+      <div class="forge-badge"><span>✦</span> CLASSIC 0.97K · TWO REALMS ONLINE <span>✦</span></div>
+      <p class="forge-overline">A CLASSIC WORLD REFORGED</p>
+      <h1 id="hero-title">AWAKEN THE<br><span>FORBIDDEN POWER</span></h1>
+      <p class="forge-lede">Return to an uncompromising MU adventure: four iconic classes, x100 experience, focused progression and a realm built for both warriors and explorers.</p>
+      <div class="forge-actions">
+        <a class="forge-btn forge-btn-primary" href="/download"><i data-lucide="download"></i><span>DOWNLOAD CLIENT<small>English · Version 0.97K</small></span></a>
+        <a class="forge-btn forge-btn-ghost" href="/register"><i data-lucide="shield-plus"></i><span>CREATE ACCOUNT<small>Begin your legend</small></span></a>
       </div>
     </div>
-    <% } %>
+    <div class="forge-sigil-wrap" aria-hidden="true">
+      <div class="forge-sigil-halo"></div><img src="/assets/images/muorigins-mark.svg" class="forge-sigil" alt="">
+      <div class="forge-sigil-caption"><span>MU</span><strong>ORIGINS</strong><small>THE ORIGINAL ADVENTURE RETURNS</small></div>
+    </div>
   </div>
+  <div class="container forge-stats" aria-label="Server quick statistics">
+    <div><span class="online-pulse"></span><small>SERVER STATUS</small><strong>ONLINE</strong></div>
+    <div><i data-lucide="users"></i><small>PLAYERS ONLINE</small><strong id="players-online"><%= playersOnline %></strong></div>
+    <div><i data-lucide="swords"></i><small>GAME VERSION</small><strong>0.97K</strong></div>
+    <div><i data-lucide="zap"></i><small>EXPERIENCE</small><strong>x100</strong></div>
+    <div><i data-lucide="clock-3"></i><small>SERVER TIME · UTC+7</small><strong id="server-time" data-tz="<%= timeZone || 'Asia/Bangkok' %>"><%= serverTime %></strong></div>
+  </div>
+</section>
+<% } else if (siteSettings.theme !== 'classic') { %>
+<div class="container mt-5 home-showcase"><%- include('theme_hero') %></div>
 <% } %>
