@@ -131,7 +131,7 @@ mix rate and second-class wings have a fixed 35% mix rate. Version 0.97K does
 not provide +12/+13 Chaos Machine upgrade operations.
 
 The initial four-class PvP/PvM damage balance profile is DW 105%, DK 100%,
-FE 110% and MG 85%. Class-versus-class modifiers remain neutral at 100%; this
+FE 110% and MG 95%. Class-versus-class modifiers remain neutral at 100%; this
 profile compensates for class formulas and MG's seven stat points per level.
 
 The total configured capacity is 120 concurrent players. Configure both game

@@ -21,13 +21,13 @@ ReflectDamageRatePvM=100
 DWDamageRatePvP=105
 DKDamageRatePvP=100
 FEDamageRatePvP=110
-MGDamageRatePvP=85
+MGDamageRatePvP=95
 
 ; damage = (damage * XXDamageRatePVM) / 100
 DWDamageRatePvM=105
 DKDamageRatePvM=100
 FEDamageRatePvM=110
-MGDamageRatePvM=85
+MGDamageRatePvM=95
 
 ;==================================================
 ; Character Class x Class Damage Rate Settings
