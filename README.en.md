@@ -134,6 +134,11 @@ The initial four-class PvP/PvM damage balance profile is DW 105%, DK 100%,
 FE 110% and MG 95%. Class-versus-class modifiers remain neutral at 100%; this
 profile compensates for class formulas and MG's seven stat points per level.
 
+Characters can reset at level 400 for 50,000,000 Zen, up to 20 resets. Stats
+are retained, while every individual stat remains capped at 32,767 by the game
+server. Grand Reset remains unavailable at this cap because its existing
+requirement is 400 resets.
+
 The total configured capacity is 120 concurrent players. Configure both game
 ports in the Google Cloud firewall. The game hostname must use DNS-only mode in
 Cloudflare; the normal Cloudflare HTTP proxy does not proxy MU game traffic.
