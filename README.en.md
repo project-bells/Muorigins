@@ -121,8 +121,9 @@ without gaining murderer status.
 
 New level-1 characters start with 300 unspent stat points and 20,000,000 Zen.
 
-Gameplay rates use x100 experience, 40% jewel drop rates and 20% excellent
-item drop rates. Normal monster spawns are increased by 50% on every map;
+Gameplay rates use x100 experience; jewel drop rates are 0.1% for Chaos,
+Bless, and Soul, 0.05% for Life, and 0.02% for Creation; the excellent item
+drop rate is 20%. Normal monster spawns are increased by 50% on every map;
 NPCs, traps and event-specific spawns are not multiplied.
 
 Upgrade success rates are fixed at 75% for +7/+8/+9 and 50% for the
