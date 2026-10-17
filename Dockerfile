@@ -57,6 +57,6 @@ RUN chmod +x /opt/mu/entrypoint.sh \
     /opt/mu/GameServer/GameServer \
     && mv /opt/mu/GameServer/DATA /opt/mu/GameServer/Data
 
-EXPOSE 44405/tcp 55601/udp 55901/tcp
+EXPOSE 44405/tcp 55601/udp 55901/tcp 55902/tcp
 
 ENTRYPOINT ["/opt/mu/entrypoint.sh"]

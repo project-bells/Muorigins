@@ -42,6 +42,7 @@ services:
       - "44405:44405/tcp"
       - "55601:55601/udp"
       - "55901:55901/tcp"
+      - "55902:55902/tcp"
     networks:
       - default
 

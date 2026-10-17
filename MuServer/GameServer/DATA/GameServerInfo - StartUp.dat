@@ -8,7 +8,7 @@ CustomerName=MuLinux
 ServerName=SV1
 
 ; Name of the Window
-WindowName=Server 1
+WindowName=Muorigins Room 1
 
 ; Code of the Server -> Sync with ConnectServer/ServerList
 ServerCode=0
@@ -26,7 +26,7 @@ ServerVersion=0.97.11
 ServerSerial=TbYehR2hFUPBKgZj
 
 ; Maximum users (MAX: 1000)
-ServerMaxUserNumber=100
+ServerMaxUserNumber=60
 
 ;==================================================
 ; Connection Settings

@@ -38,6 +38,20 @@ fi
 
 export MU_DATA_PATH
 
+# Run a second GameServer process with its own startup configuration. Both
+# rooms share JoinServer, DataServer and MySQL, but keep independent world and
+# event state. The copy is created once per container filesystem.
+if [ ! -d /opt/mu/GameServer2 ]; then
+  cp -a /opt/mu/GameServer /opt/mu/GameServer2
+
+  ROOM2_CONFIG="/opt/mu/GameServer2/Data/GameServerInfo - StartUp.dat"
+  sed -i -E "s#^ServerName=.*#ServerName=SV2#" "$ROOM2_CONFIG"
+  sed -i -E "s#^WindowName=.*#WindowName=Muorigins Room 2#" "$ROOM2_CONFIG"
+  sed -i -E "s#^ServerCode=.*#ServerCode=1#" "$ROOM2_CONFIG"
+  sed -i -E "s#^ServerPort=.*#ServerPort=55902#" "$ROOM2_CONFIG"
+  sed -i -E "s#^ServerMaxUserNumber=.*#ServerMaxUserNumber=60#" "$ROOM2_CONFIG"
+fi
+
 cd /opt/mu/ConnectServer
 ./ConnectServer &
 
@@ -48,6 +62,9 @@ cd /opt/mu/DataServer
 ./DataServer &
 
 cd /opt/mu/GameServer
+./GameServer &
+
+cd /opt/mu/GameServer2
 ./GameServer &
 
 wait -n

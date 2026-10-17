@@ -105,7 +105,20 @@ The DLL injection-based client is fully deprecated and has been removed from thi
    docker compose up -d --build
    ```
 
-3. Open `44405/tcp`, `55601/udp` and `55901/tcp`.
+3. Open `44405/tcp`, `55601/udp`, `55901/tcp` and `55902/tcp`.
+
+### Muorigins rooms
+
+The source compose build starts two GameServer processes that share accounts,
+characters, guilds, warehouses and the MySQL database while maintaining
+independent world/event state:
+
+- `Muorigins 1`: server code `0`, TCP `55901`, maximum `60` players.
+- `Muorigins 2`: server code `1`, TCP `55902`, maximum `60` players.
+
+The total configured capacity is 120 concurrent players. Configure both game
+ports in the Google Cloud firewall. The game hostname must use DNS-only mode in
+Cloudflare; the normal Cloudflare HTTP proxy does not proxy MU game traffic.
 
 For published images without a build:
 
