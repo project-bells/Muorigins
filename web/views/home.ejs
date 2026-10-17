@@ -1,12 +1,67 @@
 <%- include('partials/site_head', { pageTitle, page }) %>
 <main class="flex-grow-1 mu-home">
   <section class="container quick-path" aria-label="How to start">
-    <article><span>01</span><div><small>JOIN</small><h3>Create an account</h3><p>Register securely and prepare your first hero.</p></div><a href="/register" aria-label="Create account">→</a></article>
-    <article><span>02</span><div><small>INSTALL</small><h3>Get the client</h3><p>Download the complete 0.97K game package.</p></div><a href="/download" aria-label="Download client">→</a></article>
-    <article><span>03</span><div><small>COMPETE</small><h3>Climb the ranks</h3><p>Level, reset and earn your place among the best.</p></div><a href="/rankings" aria-label="View rankings">→</a></article>
+    <article><span>01</span><div><small>JOIN</small><h3>Create an account</h3><p>Register and prepare your first hero.</p></div><a href="/register" aria-label="Create account">→</a></article>
+    <article><span>02</span><div><small>INSTALL</small><h3>Get the client</h3><p>Download the complete English 0.97K client.</p></div><a href="/download" aria-label="Download client">→</a></article>
+    <article><span>03</span><div><small>CONQUER</small><h3>Choose your realm</h3><p>Fight in PvP or progress in the Non-PvP room.</p></div><a href="#realms" aria-label="Explore the realms">→</a></article>
   </section>
-  <section class="container section-block">
-    <div class="section-heading"><div><p>LATEST FROM THE REALM</p><h2>News & announcements</h2></div><a href="/news">View all news →</a></div>
+
+  <section class="container section-block server-overview" id="server-info">
+    <div class="section-heading server-heading"><div><p>THE CLASSIC FORMULA</p><h2>MuOrigins 0.97K · x100</h2></div><span class="season-badge">MAXIMUM 10 RESETS</span></div>
+    <div class="server-facts">
+      <article><small>EXPERIENCE</small><strong>x100</strong><p>Fast classic progression with the original 0.97K atmosphere.</p></article>
+      <article><small>NEW CHARACTER</small><strong>300 points</strong><p>Every new hero also starts with 20,000,000 Zen.</p></article>
+      <article><small>RESET SYSTEM</small><strong>10 resets</strong><p>Reset at level 400 for 1,000,000 Zen per cycle.</p></article>
+      <article><small>LANGUAGE</small><strong>English</strong><p>The website and game presentation are designed around English.</p></article>
+    </div>
+  </section>
+
+  <section class="class-section" id="classes">
+    <div class="container">
+      <div class="section-heading"><div><p>CHOOSE YOUR PATH</p><h2>Four legends. Four ways to conquer.</h2></div><span class="section-note">Balanced for PvP &amp; PvM</span></div>
+      <div class="class-grid">
+        <article class="class-card class-dw"><img src="/assets/images/classes/dw.svg" alt="Dark Wizard"><div><small>ARCANE CASTER</small><h3>Dark Wizard</h3><p>Controls the battlefield with powerful ranged magic and wide-area spells.</p><ul><li>Excellent area damage</li><li>Ranged magical combat</li><li>Damage profile: 105%</li></ul></div></article>
+        <article class="class-card class-dk"><img src="/assets/images/classes/dk.svg" alt="Dark Knight"><div><small>FRONTLINE WARRIOR</small><h3>Dark Knight</h3><p>A durable melee fighter built for direct pressure and close-range duels.</p><ul><li>Strong survivability</li><li>Powerful melee skills</li><li>Damage profile: 100%</li></ul></div></article>
+        <article class="class-card class-fe"><img src="/assets/images/classes/elf.svg" alt="Fairy Elf"><div><small>RANGED SUPPORT</small><h3>Fairy Elf</h3><p>Combines precise bow attacks with valuable support magic and agility.</p><ul><li>Fast ranged attacks</li><li>Party support abilities</li><li>Damage profile: 110%</li></ul></div></article>
+        <article class="class-card class-mg"><img src="/assets/images/classes/mg.svg" alt="Magic Gladiator"><div><small>HYBRID CHAMPION</small><h3>Magic Gladiator</h3><p>Blends swordplay and magic with seven stat points gained per level.</p><ul><li>Physical or magic builds</li><li>Flexible progression</li><li>Damage profile: 95%</li></ul></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-block realm-overview" id="realms">
+    <div class="section-heading"><div><p>TWO ROOMS, ONE ADVENTURE</p><h2>Play your way</h2></div><span class="section-note">60 players per room</span></div>
+    <div class="realm-grid">
+      <article class="realm-card realm-pvp"><div class="realm-number">01</div><div><span class="realm-type">PVP REALM</span><h3>Muorigins 1</h3><p>Open-world player combat is enabled outside safe zones. Lost Tower is a special PvP zone where defeating another player does not add murderer status.</p><div class="realm-tags"><span>Open PvP</span><span>Lost Tower PK-Free</span><span>60 slots</span></div></div></article>
+      <article class="realm-card realm-peace"><div class="realm-number">02</div><div><span class="realm-type">NON-PVP REALM</span><h3>Origins</h3><p>Progress, hunt and explore without player-versus-player combat. Blood Castle and Devil Square also remain Non-PvP in this room.</p><div class="realm-tags"><span>Non-PvP</span><span>Safe progression</span><span>60 slots</span></div></div></article>
+    </div>
+  </section>
+
+  <section class="loot-section">
+    <div class="container loot-layout">
+      <div class="loot-intro"><p class="eyebrow">GEAR &amp; ECONOMY</p><h2>Build your hero faster</h2><p>Core progression items are available through shops and monster hunting, while the best equipment still rewards adventure.</p></div>
+      <div class="loot-grid">
+        <article><span>◆</span><h3>Box +1, +2 &amp; +3</h3><p>Progression boxes are available in shops.</p></article>
+        <article><span>✦</span><h3>Bless &amp; Soul</h3><p>Jewel of Bless and Jewel of Soul are available for purchase.</p></article>
+        <article><span>▲</span><h3>Red Dragon tier</h3><p>Monster drops reach up to the Red Dragon equipment class.</p></article>
+        <article><span>20%</span><h3>Excellent drops</h3><p>Excellent item drop rate is configured at 20%.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-block command-section" id="commands">
+    <div class="section-heading"><div><p>PLAYER COMMANDS</p><h2>Everything you need in chat</h2></div><span class="section-note">Type commands in-game</span></div>
+    <div class="command-panel"><div class="command-grid">
+      <article><code>/str &lt;amount&gt;</code><span>Add Strength</span></article>
+      <article><code>/agi &lt;amount&gt;</code><span>Add Agility</span></article>
+      <article><code>/vit &lt;amount&gt;</code><span>Add Vitality</span></article>
+      <article><code>/ene &lt;amount&gt;</code><span>Add Energy</span></article>
+      <article><code>/post &lt;message&gt;</code><span>Send a global message</span></article>
+      <article class="command-reset"><code>/reset</code><span>Level 400 · Maximum 10 · Cost 1,000,000 Zen</span></article>
+    </div></div>
+  </section>
+
+  <section class="container section-block news-community">
+    <div class="section-heading"><div><p>LATEST FROM THE REALM</p><h2>News &amp; community</h2></div><a href="/news">View all news →</a></div>
     <div class="row g-4">
       <div class="col-12 col-lg-8">
         <% if (!news || news.length === 0) { %>
@@ -15,9 +70,7 @@
           <div class="news-grid"><% news.slice(0, 4).forEach(function(item, idx) { %>
             <article class="news-card <%= idx === 0 ? 'news-card-featured' : '' %>">
               <% if (item.featuredImage) { %><img src="<%= item.featuredImage %>" alt="" loading="lazy"><% } %>
-              <div class="news-card-body"><div class="news-meta"><span>NEWS</span><time><%= new Date(item.created_at).toLocaleDateString(locale) %></time></div>
-                <% if (!item.hide_title) { %><h3><%= item.title %></h3><% } %><% if (item.excerpt) { %><p><%= item.excerpt %></p><% } %><a href="/news/<%= item.id %>">Read article →</a>
-              </div>
+              <div class="news-card-body"><div class="news-meta"><span>NEWS</span><time><%= new Date(item.created_at).toLocaleDateString(locale) %></time></div><% if (!item.hide_title) { %><h3><%= item.title %></h3><% } %><% if (item.excerpt) { %><p><%= item.excerpt %></p><% } %><a href="/news/<%= item.id %>">Read article →</a></div>
             </article><% }); %></div>
         <% } %>
       </div>
@@ -26,23 +79,18 @@
           <% if (session && session.user) { %>
             <p class="eyebrow">WELCOME BACK</p><h3><%= session.user.id %></h3><p>Manage your account and characters.</p><a class="btn btn-primary w-100" href="/account">Open account panel</a><a class="account-link" href="/logout">Log out</a>
           <% } else { %>
-            <p class="eyebrow">PLAYER LOGIN</p><h3>Enter the realm</h3><form action="/login" method="POST">
-              <label for="home-account">Account</label><input id="home-account" type="text" class="form-control" name="account" autocomplete="username" required>
-              <label for="home-password">Password</label><input id="home-password" type="password" class="form-control" name="password" autocomplete="current-password" required>
-              <button type="submit" class="btn btn-primary w-100">Log in</button></form><p class="account-note">New to Muorigins? <a href="/register">Create an account</a></p>
+            <p class="eyebrow">PLAYER LOGIN</p><h3>Enter the realm</h3><form action="/login" method="POST"><label for="home-account">Account</label><input id="home-account" type="text" class="form-control" name="account" autocomplete="username" required><label for="home-password">Password</label><input id="home-password" type="password" class="form-control" name="password" autocomplete="current-password" required><button type="submit" class="btn btn-primary w-100">Log in</button></form><p class="account-note">New to Muorigins? <a href="/register">Create an account</a></p>
           <% } %>
         </div>
-        <div class="content-card event-card"><div class="card-title-row"><div><p class="eyebrow">SERVER SCHEDULE</p><h3>Upcoming events</h3></div><span>UTC+7</span></div>
-          <% if (!events || events.length === 0) { %><p class="muted-copy">No scheduled events are available.</p><% } else { %><div class="event-list"><% events.slice(0, 5).forEach(function(ev) { %><div><span class="event-gem">◆</span><p><strong><%= ev.name %></strong><small><%= ev.nextTime %></small></p><time class="event-countdown" data-countdown="<%= ev.nextAt %>"><%= ev.remainingSeconds %></time></div><% }); %></div><% } %>
-        </div>
+        <div class="content-card event-card"><div class="card-title-row"><div><p class="eyebrow">SERVER SCHEDULE</p><h3>Upcoming events</h3></div><span>UTC+7</span></div><% if (!events || events.length === 0) { %><p class="muted-copy">No scheduled events are available.</p><% } else { %><div class="event-list"><% events.slice(0, 5).forEach(function(ev) { %><div><span class="event-gem">◆</span><p><strong><%= ev.name %></strong><small><%= ev.nextTime %></small></p><time class="event-countdown" data-countdown="<%= ev.nextAt %>"><%= ev.remainingSeconds %></time></div><% }); %></div><% } %></div>
       </aside>
     </div>
   </section>
-  <section class="realm-section"><div class="container"><div class="section-heading"><div><p>HALL OF HEROES</p><h2>Top adventurers</h2></div><a href="/rankings">Full rankings →</a></div>
-    <div class="content-card ranking-card"><div class="table-responsive"><table class="table mu-ranking mb-0"><thead><tr><th>Rank</th><th>Character</th><th>Class</th><th>Level</th><th>Reset</th><th>Grand reset</th></tr></thead><tbody>
-      <% if (!ranking || ranking.length === 0) { %><tr><td colspan="6" class="text-center py-5">No ranking data is available yet.</td></tr><% } else { %><% ranking.forEach(function(row, idx) { %><tr><td><span class="rank rank-<%= idx + 1 %>">#<%= idx + 1 %></span></td><td><strong><%= row.Name %></strong></td><td><img src="<%= row.ClassIcon %>" alt="" class="class-icon"> <%= row.ClassName %></td><td><%= row.cLevel %></td><td><%= row.ResetCount %></td><td><%= row.GrandResetCount %></td></tr><% }); %><% } %>
-    </tbody></table></div></div>
+
+  <section class="realm-section hall-section"><div class="container"><div class="section-heading"><div><p>HALL OF HEROES</p><h2>Top adventurers</h2></div><a href="/rankings">Full rankings →</a></div>
+    <div class="content-card ranking-card"><div class="table-responsive"><table class="table mu-ranking mb-0"><thead><tr><th>Rank</th><th>Character</th><th>Class</th><th>Level</th><th>Reset</th><th>Grand reset</th></tr></thead><tbody><% if (!ranking || ranking.length === 0) { %><tr><td colspan="6" class="text-center py-5">No ranking data is available yet.</td></tr><% } else { %><% ranking.forEach(function(row, idx) { %><tr><td><span class="rank rank-<%= idx + 1 %>">#<%= idx + 1 %></span></td><td><strong><%= row.Name %></strong></td><td><img src="<%= row.ClassIcon %>" alt="" class="class-icon"> <%= row.ClassName %></td><td><%= row.cLevel %></td><td><%= row.ResetCount %></td><td><%= row.GrandResetCount %></td></tr><% }); %><% } %></tbody></table></div></div>
   </div></section>
-  <section class="container final-cta"><div><p>YOUR LEGEND STARTS HERE</p><h2>Return to the world of MU</h2><span>Version 0.97K · Windows client · English interface</span></div><div><a class="btn btn-primary btn-lg" href="/register">Create account</a><a class="btn btn-outline-light btn-lg" href="/download">Download</a></div></section>
+
+  <section class="container final-cta"><div><p>YOUR LEGEND STARTS HERE</p><h2>Return to the world of MU</h2><span>Version 0.97K · x100 EXP · English client · Two realms</span></div><div><a class="btn btn-primary btn-lg" href="/register">Create account</a><a class="btn btn-outline-light btn-lg" href="/download">Download</a></div></section>
 </main>
 <%- include('partials/site_footer') %>

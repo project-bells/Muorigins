@@ -210,3 +210,47 @@ body:not(.admin-page)::before { content:""; position:fixed; inset:0; pointer-eve
 .final-cta{margin-top:80px;margin-bottom:80px;padding:45px!important;display:flex;align-items:center;justify-content:space-between;gap:25px;border:1px solid #795430;background:linear-gradient(110deg,#21150f,#0e0b09);box-shadow:inset 0 1px #ffd18c22}.final-cta h2{font:600 35px Georgia,serif;color:#f6e5cb;margin:0 0 8px}.final-cta span{color:#aa9b89}.final-cta>div:last-child{display:flex;gap:12px}.mu-footer{background:#080706!important;border-top:1px solid #39291d}.footer-brand{margin-bottom:18px}.footer-copy{max-width:420px;color:#8f8478;line-height:1.7}.mu-footer h6{color:#c69b5d;font-size:10px;letter-spacing:.18em;margin-bottom:14px}.mu-footer .col-6>a{display:block;color:#aa9d8d;text-decoration:none;margin:9px 0}.footer-bottom{border-top:1px solid #2f251e;margin-top:20px;padding-top:22px;color:#766d64;font-size:11px}
 @media(max-width:991px){.mu-hero{padding-top:35px}.server-status-card{max-width:none;margin-top:30px}.quick-path{grid-template-columns:1fr}.quick-path article{border-right:0;border-bottom:1px solid var(--mu-line)}.news-grid{grid-template-columns:1fr}.news-card-featured{display:block;grid-column:auto}.final-cta{align-items:flex-start;flex-direction:column}}
 @media(max-width:600px){.mu-hero{min-height:720px!important}.mu-hero h1{font-size:44px}.hero-actions .btn{width:100%}.status-grid{grid-template-columns:1fr}.quick-path article{padding:20px}.section-block,.realm-section{padding-top:58px;padding-bottom:58px}.section-heading{align-items:flex-start;flex-direction:column}.news-card-featured img{min-height:0;height:180px}.final-cta{margin:50px 12px;padding:28px!important}.final-cta>div:last-child{width:100%;flex-direction:column}.mu-ranking th,.mu-ranking td{white-space:nowrap}}
+
+/* 2026 English-only realm guide */
+html { scroll-behavior:smooth; }
+.section-note,.season-badge { color:#d7b477; border:1px solid #6a4c2f; background:#17110d; padding:9px 13px; font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+.server-overview { padding-top:100px; }
+.server-facts { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--mu-line); background:#110e0c; box-shadow:0 22px 60px #0005; }
+.server-facts article { min-height:210px; padding:30px 26px; border-right:1px solid var(--mu-line); position:relative; overflow:hidden; }
+.server-facts article:last-child { border-right:0; }
+.server-facts article::after { content:""; position:absolute; width:110px; height:110px; right:-45px; bottom:-55px; border:1px solid #a36a3333; transform:rotate(45deg); }
+.server-facts small,.class-card small,.realm-type { display:block; color:#b88348; font-size:9px; font-weight:800; letter-spacing:.18em; margin-bottom:13px; }
+.server-facts strong { display:block; color:#fff0d6; font:600 28px Georgia,serif; margin-bottom:13px; }
+.server-facts p { color:#958778; font-size:13px; line-height:1.65; margin:0; }
+.class-section { padding:92px 0; background:linear-gradient(180deg,#100c0aee,#080706f5),radial-gradient(circle at 20% 10%,#7f3e1b33,transparent 38%); border-block:1px solid #38281d; }
+.class-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.class-card { display:grid; grid-template-columns:112px 1fr; gap:24px; min-height:290px; padding:30px; position:relative; overflow:hidden; background:linear-gradient(135deg,#1b1511,#0c0a09); border:1px solid #4e3827; box-shadow:0 18px 45px #0004; transition:transform .25s ease,border-color .25s ease; }
+.class-card:hover { transform:translateY(-4px); border-color:#b47d43; }
+.class-card::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.32; background:radial-gradient(circle at 0 0,var(--class-glow),transparent 48%); }
+.class-card img { width:104px; height:104px; padding:17px; position:relative; object-fit:contain; border:1px solid #775334; background:#0c0907cc; filter:drop-shadow(0 8px 16px #000); }
+.class-card>div { position:relative; }
+.class-card h3 { color:#f7e8d1; font:600 28px Georgia,serif; margin:0 0 10px; }
+.class-card p { color:#a99a88; line-height:1.65; font-size:13px; }
+.class-card ul { list-style:none; margin:18px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:7px; }
+.class-card li { padding:6px 9px; color:#c7b49c; background:#ffffff07; border:1px solid #5a412d; font-size:10px; text-transform:uppercase; letter-spacing:.06em; }
+.class-dw { --class-glow:#315b92; }.class-dk { --class-glow:#9a321f; }.class-fe { --class-glow:#50793e; }.class-mg { --class-glow:#765092; }
+.realm-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.realm-card { display:grid; grid-template-columns:auto 1fr; gap:24px; padding:34px; min-height:280px; border:1px solid #5c412b; background:linear-gradient(135deg,#1b1511,#0e0b09); box-shadow:0 18px 45px #0004; }
+.realm-pvp { border-top:3px solid #a94d31; }.realm-peace { border-top:3px solid #4c8b7c; }
+.realm-number { color:#5d4937; font:700 48px Georgia,serif; line-height:1; }
+.realm-card h3 { color:#faead2; font:600 30px Georgia,serif; margin:0 0 12px; }
+.realm-card p { color:#a99a88; line-height:1.75; }
+.realm-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }.realm-tags span{padding:7px 10px;border:1px solid #5b422e;color:#d8b985;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.loot-section { padding:90px 0; border-block:1px solid #3d2a1d; background:linear-gradient(110deg,#160e0a,#090807); }
+.loot-layout { display:grid; grid-template-columns:minmax(240px,.7fr) 1.5fr; gap:60px; align-items:center; }
+.loot-intro h2 { color:#f7e7ce; font:600 42px Georgia,serif; }.loot-intro>p:last-child{color:#9f9181;line-height:1.75}
+.loot-grid { display:grid; grid-template-columns:repeat(2,1fr); border:1px solid var(--mu-line); }
+.loot-grid article { min-height:180px; padding:25px; border-right:1px solid var(--mu-line); border-bottom:1px solid var(--mu-line); }.loot-grid article:nth-child(2n){border-right:0}.loot-grid article:nth-last-child(-n+2){border-bottom:0}
+.loot-grid span { color:#e2b463; font:700 18px Georgia,serif; }.loot-grid h3{color:#f1dfc4;font:600 20px Georgia,serif;margin:14px 0 8px}.loot-grid p{color:#958777;font-size:12px;line-height:1.6;margin:0}
+.command-panel { padding:1px; background:linear-gradient(135deg,#a36b35,#3f2b1e); box-shadow:0 20px 55px #0005; }
+.command-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#4a3424; }
+.command-grid article { min-height:112px; padding:25px; display:flex; flex-direction:column; justify-content:center; gap:10px; background:#110e0c; }
+.command-grid code { color:#f2c67e; font:600 17px/1.2 Consolas,monospace; }.command-grid span{color:#96897a;font-size:12px}.command-reset{background:linear-gradient(135deg,#25150e,#120e0b)!important}
+.news-community { padding-top:60px; }.hall-section{margin-top:0}
+@media(max-width:991px){.server-facts{grid-template-columns:1fr 1fr}.server-facts article:nth-child(2){border-right:0}.server-facts article:nth-child(-n+2){border-bottom:1px solid var(--mu-line)}.class-grid,.realm-grid{grid-template-columns:1fr}.loot-layout{grid-template-columns:1fr}.command-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.server-facts,.loot-grid,.command-grid{grid-template-columns:1fr}.server-facts article{min-height:0;border-right:0;border-bottom:1px solid var(--mu-line)!important}.server-facts article:last-child{border-bottom:0!important}.class-card{grid-template-columns:72px 1fr;padding:22px;gap:16px}.class-card img{width:72px;height:72px;padding:11px}.class-card h3{font-size:23px}.class-card ul{grid-column:1/-1}.realm-card{grid-template-columns:1fr;padding:25px}.realm-number{font-size:34px}.loot-grid article{border-right:0;border-bottom:1px solid var(--mu-line)!important}.loot-grid article:last-child{border-bottom:0!important}.loot-section{padding:58px 0}.loot-intro h2{font-size:34px}}

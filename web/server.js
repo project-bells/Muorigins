@@ -9,7 +9,7 @@ const sanitizeHtml = require('sanitize-html');
 const fs = require('fs');
 const path = require('path');
 const { ensureSettings, readSettings, registerSettings } = require('./lib/site-settings');
-const { translator, locales, registerCatalogs, resolveLanguage } = require('./lib/i18n');
+const { translator, locales, registerCatalogs } = require('./lib/i18n');
 
 const app = express();
 
@@ -759,8 +759,8 @@ app.use(async (req, res, next) => {
   try {
     const settings = await readSettings(pool);
     res.locals.siteSettings = settings;
-    // El visitante elige su idioma sin modificar el predeterminado del servidor.
-    const language = resolveLanguage(req, settings.language);
+    // MuOrigins is intentionally presented in English only.
+    const language = 'en';
     res.locals.language = language;
     res.locals.currentQuery = req.query;
     res.locals.isAdminPage = req.path.startsWith('/admin');

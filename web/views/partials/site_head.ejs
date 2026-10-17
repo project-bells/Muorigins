@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= language %>">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,9 @@
   <title><%= pageTitle || appName %></title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/custom.css?v=20261017-muorigins">
+  <link rel="stylesheet" href="/assets/css/custom.css?v=20261017-realm-guide">
   <script src="/js/i18n.js"></script>
-  <script src="/locales/<%= language %>.js"></script>
+  <script src="/locales/en.js"></script>
   <% if (siteSettings.theme !== "classic") { %><link rel="stylesheet" href="/css/daedalus.css?v=20261017-muorigins"><% } %>
 </head>
 <body class="d-flex flex-column theme-<%= siteSettings.theme %>">
@@ -28,14 +28,13 @@
         </svg>
       </button>
 
-      <%- include('language_picker') %>
       <div class="nav d-none d-lg-flex align-items-center">
         <% if (session && session.user) { %>
-          <a class="nav-link text-white" href="/account"><%= t("Cuenta") %></a>
-          <a class="nav-link text-white" href="/logout"><%= t("Salir") %></a>
+          <a class="nav-link text-white" href="/account">Account</a>
+          <a class="nav-link text-white" href="/logout">Log out</a>
         <% } else { %>
-          <a class="nav-link text-white" href="/login"><%= t("Ingresar") %></a>
-          <a class="nav-link text-white" href="/register"><%= t("Crear cuenta") %></a>
+          <a class="nav-link text-white" href="/login">Log in</a>
+          <a class="nav-link text-white" href="/register">Create account</a>
         <% } %>
       </div>
     </div>
@@ -45,10 +44,10 @@
     <div class="container">
       <div class="collapse navbar-collapse justify-content-center" id="mainNav">
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item"><a href="/" class="nav-link text-white <%= page === 'home' ? 'active' : '' %>"><%= t("Inicio") %></a></li>
-          <li class="nav-item"><a href="/news" class="nav-link text-white <%= page === 'news' ? 'active' : '' %>"><%= t("Noticias") %></a></li>
+          <li class="nav-item"><a href="/" class="nav-link text-white <%= page === 'home' ? 'active' : '' %>">Home</a></li>
+          <li class="nav-item"><a href="/news" class="nav-link text-white <%= page === 'news' ? 'active' : '' %>">News</a></li>
           <li class="nav-item"><a href="/rankings" class="nav-link text-white <%= page === 'rankings' ? 'active' : '' %>">Rankings</a></li>
-          <li class="nav-item"><a href="/download" class="nav-link text-white <%= page === 'download' ? 'active' : '' %>"><%= t("Descargas") %></a></li>
+          <li class="nav-item"><a href="/download" class="nav-link text-white <%= page === 'download' ? 'active' : '' %>">Downloads</a></li>
         </ul>
       </div>
     </div>
@@ -56,25 +55,25 @@
 
   <div class="offcanvas offcanvas-start w-100" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
     <div class="offcanvas-header border-bottom">
-      <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><%= t("Menu") %></h5>
+      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
     <div class="offcanvas-body">
       <ul class="navbar-nav">
-        <li class="nav-item"><a href="/" class="nav-link"><%= t("Inicio") %></a></li>
-        <li class="nav-item"><a href="/news" class="nav-link"><%= t("Noticias") %></a></li>
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/news" class="nav-link">News</a></li>
         <li class="nav-item"><a href="/rankings" class="nav-link">Rankings</a></li>
-        <li class="nav-item"><a href="/download" class="nav-link"><%= t("Descargas") %></a></li>
+        <li class="nav-item"><a href="/download" class="nav-link">Downloads</a></li>
       </ul>
 
       <div class="mt-3">
         <% if (session && session.user) { %>
-          <a class="btn btn-outline-dark w-100 mb-2" href="/account"><%= t("Cuenta") %></a>
-          <a class="btn btn-outline-secondary w-100" href="/logout"><%= t("Salir") %></a>
+          <a class="btn btn-outline-dark w-100 mb-2" href="/account">Account</a>
+          <a class="btn btn-outline-secondary w-100" href="/logout">Log out</a>
         <% } else { %>
-          <a class="btn btn-primary w-100 mb-2" href="/login"><%= t("Ingresar") %></a>
-          <a class="btn btn-outline-primary w-100" href="/register"><%= t("Crear cuenta") %></a>
+          <a class="btn btn-primary w-100 mb-2" href="/login">Log in</a>
+          <a class="btn btn-outline-primary w-100" href="/register">Create account</a>
         <% } %>
       </div>
     </div>
