@@ -96,10 +96,10 @@ DevilSquareMixCost4_AL3=700000
 ;	0 ~ MAXMONEY
 ;==================================================
 ; +10 Level Upgrade Mix Rate
-PlusItemLevelMixRate1_AL0=60
-PlusItemLevelMixRate1_AL1=60
-PlusItemLevelMixRate1_AL2=60
-PlusItemLevelMixRate1_AL3=60
+PlusItemLevelMixRate1_AL0=50
+PlusItemLevelMixRate1_AL1=50
+PlusItemLevelMixRate1_AL2=50
+PlusItemLevelMixRate1_AL3=50
 ; +10 Level Upgrade Mix Cost
 PlusItemLevelMixCost1_AL0=2000000
 PlusItemLevelMixCost1_AL1=2000000
@@ -107,10 +107,10 @@ PlusItemLevelMixCost1_AL2=2000000
 PlusItemLevelMixCost1_AL3=2000000
 
 ; +11 Level Upgrade Mix Rate
-PlusItemLevelMixRate2_AL0=60
-PlusItemLevelMixRate2_AL1=60
-PlusItemLevelMixRate2_AL2=60
-PlusItemLevelMixRate2_AL3=60
+PlusItemLevelMixRate2_AL0=50
+PlusItemLevelMixRate2_AL1=50
+PlusItemLevelMixRate2_AL2=50
+PlusItemLevelMixRate2_AL3=50
 ; +11 Level Upgrade Mix Cost
 PlusItemLevelMixCost2_AL0=4000000
 PlusItemLevelMixCost2_AL1=4000000
@@ -118,10 +118,10 @@ PlusItemLevelMixCost2_AL2=4000000
 PlusItemLevelMixCost2_AL3=4000000
 
 ; Additional Mix Rate when item has Luck
-PlusItemLevelAddLuckRate_AL0=20
-PlusItemLevelAddLuckRate_AL1=20
-PlusItemLevelAddLuckRate_AL2=20
-PlusItemLevelAddLuckRate_AL3=20
+PlusItemLevelAddLuckRate_AL0=0
+PlusItemLevelAddLuckRate_AL1=0
+PlusItemLevelAddLuckRate_AL2=0
+PlusItemLevelAddLuckRate_AL3=0
 
 ;==================================================
 ; Dinorant Mix Settings
@@ -175,10 +175,10 @@ FruitMixCost_AL3=3000000
 ;	0 ~ 100
 ;==================================================
 ; Wing 1 Mix Rate
-Wing1MixRate_AL0=-1
-Wing1MixRate_AL1=-1
-Wing1MixRate_AL2=-1
-Wing1MixRate_AL3=-1
+Wing1MixRate_AL0=50
+Wing1MixRate_AL1=50
+Wing1MixRate_AL2=50
+Wing1MixRate_AL3=50
 ; Wing 1 Mix Cost
 Wing1MixCost_AL0=-1
 Wing1MixCost_AL1=-1
@@ -186,16 +186,16 @@ Wing1MixCost_AL2=-1
 Wing1MixCost_AL3=-1
 
 ; Additional Mix Rate when Item is added
-Wing1MixAddItemRate_AL0=-1
-Wing1MixAddItemRate_AL1=-1
-Wing1MixAddItemRate_AL2=-1
-Wing1MixAddItemRate_AL3=-1
+Wing1MixAddItemRate_AL0=0
+Wing1MixAddItemRate_AL1=0
+Wing1MixAddItemRate_AL2=0
+Wing1MixAddItemRate_AL3=0
 
 ; Additional Mix Rate when Jewel is added
-Wing1MixAddJewelRate_AL0=-1
-Wing1MixAddJewelRate_AL1=-1
-Wing1MixAddJewelRate_AL2=-1
-Wing1MixAddJewelRate_AL3=-1
+Wing1MixAddJewelRate_AL0=0
+Wing1MixAddJewelRate_AL1=0
+Wing1MixAddJewelRate_AL2=0
+Wing1MixAddJewelRate_AL3=0
 
 ;==================================================
 ; Blood Castle Mix Settings
@@ -286,10 +286,10 @@ BloodCastleMixCost6_AL3=600000
 ;	0 ~ 100
 ;==================================================
 ; Wing 2 Mix Rate
-Wing2MixRate_AL0=-1
-Wing2MixRate_AL1=-1
-Wing2MixRate_AL2=-1
-Wing2MixRate_AL3=-1
+Wing2MixRate_AL0=35
+Wing2MixRate_AL1=35
+Wing2MixRate_AL2=35
+Wing2MixRate_AL3=35
 ; Wing 2 Mix Cost
 Wing2MixCost_AL0=5000000
 Wing2MixCost_AL1=5000000
@@ -297,10 +297,10 @@ Wing2MixCost_AL2=5000000
 Wing2MixCost_AL3=5000000
 
 ; Additional Mix Rate when Item is added
-Wing2MixAddItemRate_AL0=-1
-Wing2MixAddItemRate_AL1=-1
-Wing2MixAddItemRate_AL2=-1
-Wing2MixAddItemRate_AL3=-1
+Wing2MixAddItemRate_AL0=0
+Wing2MixAddItemRate_AL1=0
+Wing2MixAddItemRate_AL2=0
+Wing2MixAddItemRate_AL3=0
 
 ; Custom Wing Mix Rate
 Wing2CustomMixRate_AL0=0

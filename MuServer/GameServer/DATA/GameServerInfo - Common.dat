@@ -299,16 +299,16 @@ TransformationRing6=41
 ; Jewel Settings
 ;==================================================
 ; Jewel of Soul (+7/+8/+9) upgrade success rate
-JewelOfSoulSuccessRate_AL1=50
-JewelOfSoulSuccessRate_AL0=50
-JewelOfSoulSuccessRate_AL2=50
-JewelOfSoulSuccessRate_AL3=50
+JewelOfSoulSuccessRate_AL1=75
+JewelOfSoulSuccessRate_AL0=75
+JewelOfSoulSuccessRate_AL2=75
+JewelOfSoulSuccessRate_AL3=75
 
 ; Additional Jewel of Soul rate when item has Luck
-JewelOfSoulAddLuckRate_AL0=25
-JewelOfSoulAddLuckRate_AL1=25
-JewelOfSoulAddLuckRate_AL2=25
-JewelOfSoulAddLuckRate_AL3=25
+JewelOfSoulAddLuckRate_AL0=0
+JewelOfSoulAddLuckRate_AL1=0
+JewelOfSoulAddLuckRate_AL2=0
+JewelOfSoulAddLuckRate_AL3=0
 
 ; Jewel of Life upgrade success rate
 JewelOfLifeSuccessRate_AL0=50

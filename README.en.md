@@ -125,6 +125,11 @@ Gameplay rates use x100 experience, 40% jewel drop rates and 20% excellent
 item drop rates. Normal monster spawns are increased by 50% on every map;
 NPCs, traps and event-specific spawns are not multiplied.
 
+Upgrade success rates are fixed at 75% for +7/+8/+9 and 50% for the
+supported +10/+11 Chaos Machine upgrades. First-class wings have a fixed 50%
+mix rate and second-class wings have a fixed 35% mix rate. Version 0.97K does
+not provide +12/+13 Chaos Machine upgrade operations.
+
 The total configured capacity is 120 concurrent players. Configure both game
 ports in the Google Cloud firewall. The game hostname must use DNS-only mode in
 Cloudflare; the normal Cloudflare HTTP proxy does not proxy MU game traffic.
