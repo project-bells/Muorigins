@@ -10,4 +10,5 @@
 
 //Map	X	Y	TX	TY	Comment
 0	139	123	148	133	//Ring de Lorencia
+4	0	0	255	255	//Lost Tower - PvP without murderer status
 end

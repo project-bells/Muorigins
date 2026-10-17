@@ -116,6 +116,9 @@ independent world/event state:
 - `Muorigins 1`: server code `0`, TCP `55901`, maximum `60` players, PvP from level 1 outside safe zones.
 - `Origins`: server code `1`, TCP `55902`, maximum `60` players, non-PvP.
 
+Lost Tower (map 4) is a PK-free PvP zone: players can fight there in room 1
+without gaining murderer status.
+
 New level-1 characters start with 300 unspent stat points and 20,000,000 Zen.
 
 The total configured capacity is 120 concurrent players. Configure both game
