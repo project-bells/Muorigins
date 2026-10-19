@@ -33,6 +33,21 @@ namespace
 		}
 		return -1;
 	}
+
+	void SendHelperSkillAnimation(LPOBJ lpObj, int skill, int targetIndex)
+	{
+		PMSG_SKILL_ATTACK_SEND message = {};
+		message.header.setE(0x19, sizeof(message));
+		message.skill = skill;
+		// Bit 15 marks a Helper-originated cast. The client masks entity keys to
+		// 15 bits and uses this marker only to replay the local cast animation.
+		message.index[0] = SET_NUMBERHB(lpObj->Index) | 0x80;
+		message.index[1] = SET_NUMBERLB(lpObj->Index);
+		message.target[0] = SET_NUMBERHB(targetIndex) | 0x80;
+		message.target[1] = SET_NUMBERLB(targetIndex);
+		DataSend(lpObj->Index, (BYTE*)&message, message.header.size);
+		MsgSendV2(lpObj, (BYTE*)&message, message.header.size);
+	}
 }
 
 CHelperManager::CHelperManager()
@@ -275,7 +290,7 @@ void CHelperManager::ProcessAttack(LPOBJ lpObj, HELPER_RUNTIME& runtime, DWORD t
 		// the same 0x19 skill notification explicitly. Without it damage is
 		// applied correctly, but the local player appears to stand still while
 		// the monster dies.
-		gSkillManager.GCSkillAttackSend(lpObj, skill->m_index, runtime.targetIndex, 1);
+		SendHelperSkillAnimation(lpObj, skill->m_index, runtime.targetIndex);
 		gSkillManager.UseAttackSkill(lpObj->Index, runtime.targetIndex, skill);
 	}
 	else
