@@ -3,6 +3,7 @@
 #include "Attack.h"
 #include "EffectManager.h"
 #include "ItemManager.h"
+#include "Map.h"
 #include "ObjectManager.h"
 #include "SkillManager.h"
 #include "Util.h"
@@ -14,6 +15,7 @@ namespace
 	const DWORD HELPER_PACKET_INTERVAL = 250;
 	const DWORD HELPER_ACTION_INTERVAL = 600;
 	const DWORD HELPER_BUFF_INTERVAL = 3000;
+	const DWORD HELPER_LOOT_INTERVAL = 500;
 
 	bool IsBuffSkill(int skill)
 	{
@@ -48,6 +50,8 @@ void CHelperManager::Reset(int aIndex)
 	this->m_Runtime[aIndex].settings.hpThreshold = 50;
 	this->m_Runtime[aIndex].settings.mpThreshold = 30;
 	this->m_Runtime[aIndex].settings.secondaryEvery = 5;
+	this->m_Runtime[aIndex].settings.lootFlags = HELPER_LOOT_ZEN | HELPER_LOOT_JEWELS | HELPER_LOOT_EXCELLENT;
+	this->m_Runtime[aIndex].settings.lootRange = 3;
 	this->m_Runtime[aIndex].targetIndex = -1;
 }
 
@@ -56,6 +60,7 @@ bool CHelperManager::ValidateSettings(const HELPER_SETTINGS& settings) const
 	if (settings.version != HELPER_PROTOCOL_VERSION || settings.huntingRange < 1 || settings.huntingRange > 10) return false;
 	if (settings.hpThreshold > 100 || settings.mpThreshold > 100 || settings.primarySkill >= MAX_SKILL || settings.secondarySkill >= MAX_SKILL) return false;
 	if (settings.secondaryEvery < 1 || settings.secondaryEvery > 20) return false;
+	if (settings.lootRange < 1 || settings.lootRange > 5 || (settings.lootFlags & ~(HELPER_LOOT_ZEN | HELPER_LOOT_JEWELS | HELPER_LOOT_EXCELLENT)) != 0) return false;
 	const BYTE allowed = HELPER_FLAG_AUTO_ATTACK | HELPER_FLAG_AUTO_HP | HELPER_FLAG_AUTO_MP | HELPER_FLAG_AUTO_BUFF;
 	return (settings.flags & ~allowed) == 0;
 }
@@ -160,6 +165,46 @@ void CHelperManager::ProcessUser(int aIndex, DWORD tick)
 	this->ProcessPotion(lpObj, runtime);
 	this->ProcessBuff(lpObj, runtime, tick);
 	this->ProcessAttack(lpObj, runtime, tick);
+	this->ProcessLoot(lpObj, runtime, tick);
+}
+
+bool CHelperManager::MatchLootFilter(const CItem& item, BYTE flags) const
+{
+	const int kind = item.GetKind();
+	if ((flags & HELPER_LOOT_ZEN) != 0 && kind == GET_ITEM(14, 15)) return true;
+	if ((flags & HELPER_LOOT_JEWELS) != 0 &&
+		(kind == GET_ITEM(12, 15) || kind == GET_ITEM(14, 13) || kind == GET_ITEM(14, 14) || kind == GET_ITEM(14, 16) || kind == GET_ITEM(14, 22))) return true;
+	if ((flags & HELPER_LOOT_EXCELLENT) != 0 && item.m_ExceOption != 0) return true;
+	return false;
+}
+
+void CHelperManager::ProcessLoot(LPOBJ lpObj, HELPER_RUNTIME& runtime, DWORD tick)
+{
+	if (runtime.settings.lootFlags == 0 || (runtime.lastLootTick != 0 && (tick - runtime.lastLootTick) < HELPER_LOOT_INTERVAL)) return;
+	runtime.lastLootTick = tick;
+	int bestIndex = -1;
+	int bestDistance = 0x7FFFFFFF;
+	const int maximum = runtime.settings.lootRange * runtime.settings.lootRange;
+
+	for (int n = 0; n < MAX_VIEWPORT; n++)
+	{
+		VIEWPORT_STRUCT& view = lpObj->VpPlayerItem[n];
+		if (view.state == 0 || view.type != OBJECT_ITEM || MAP_ITEM_RANGE(view.index) == 0) continue;
+		CMapItem& item = gMap[lpObj->Map].m_Item[view.index];
+		if (item.IsItem() == 0 || item.m_Live == 0 || item.m_Give != 0 || !this->MatchLootFilter(item, runtime.settings.lootFlags)) continue;
+		int dx = item.m_X - lpObj->X, dy = item.m_Y - lpObj->Y;
+		int distance = (dx * dx) + (dy * dy);
+		if (distance <= maximum && distance < bestDistance) { bestDistance = distance; bestIndex = view.index; }
+	}
+
+	if (bestIndex >= 0)
+	{
+		PMSG_ITEM_GET_RECV message = {};
+		message.header.set(0x22, sizeof(message));
+		message.index[0] = SET_NUMBERHB(bestIndex);
+		message.index[1] = SET_NUMBERLB(bestIndex);
+		gItemManager.CGItemGetRecv(&message, lpObj->Index);
+	}
 }
 
 void CHelperManager::ProcessPotion(LPOBJ lpObj, HELPER_RUNTIME& runtime)
