@@ -270,6 +270,12 @@ void CHelperManager::ProcessAttack(LPOBJ lpObj, HELPER_RUNTIME& runtime, DWORD t
 	{
 		CSkill* skill = gSkillManager.GetSkill(lpObj, skillIndex);
 		if (skill == 0 || !gSkillManager.CheckSkillDelay(lpObj, skill->m_index)) return;
+		// A normal right-click starts the cast animation locally before the
+		// server resolves damage. Helper has no physical mouse click, so send
+		// the same 0x19 skill notification explicitly. Without it damage is
+		// applied correctly, but the local player appears to stand still while
+		// the monster dies.
+		gSkillManager.GCSkillAttackSend(lpObj, skill->m_index, runtime.targetIndex, 1);
 		gSkillManager.UseAttackSkill(lpObj->Index, runtime.targetIndex, skill);
 	}
 	else
