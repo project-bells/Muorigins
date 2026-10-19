@@ -36,17 +36,13 @@ namespace
 
 	void SendHelperSkillAnimation(LPOBJ lpObj, int skill, int targetIndex)
 	{
-		PMSG_SKILL_ATTACK_SEND message = {};
-		message.header.setE(0x19, sizeof(message));
+		PMSG_HELPER_CAST_SEND message = {};
+		message.header.set(HELPER_PROTOCOL_HEAD, HELPER_SUB_CAST, sizeof(message));
+		message.version = HELPER_PROTOCOL_VERSION;
 		message.skill = skill;
-		// Bit 15 marks a Helper-originated cast. The client masks entity keys to
-		// 15 bits and uses this marker only to replay the local cast animation.
-		message.index[0] = SET_NUMBERHB(lpObj->Index) | 0x80;
-		message.index[1] = SET_NUMBERLB(lpObj->Index);
-		message.target[0] = SET_NUMBERHB(targetIndex) | 0x80;
+		message.target[0] = SET_NUMBERHB(targetIndex);
 		message.target[1] = SET_NUMBERLB(targetIndex);
 		DataSend(lpObj->Index, (BYTE*)&message, message.header.size);
-		MsgSendV2(lpObj, (BYTE*)&message, message.header.size);
 	}
 }
 
