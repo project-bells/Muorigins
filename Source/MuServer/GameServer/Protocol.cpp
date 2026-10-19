@@ -14,6 +14,7 @@
 #include "GoldenArcher.h"
 #include "Guild.h"
 #include "GuildManager.h"
+#include "HelperManager.h"
 #include "HackPacketCheck.h"
 #include "ItemManager.h"
 #include "JSProtocol.h"
@@ -44,6 +45,16 @@ void ProtocolCore(BYTE head, BYTE* lpMsg, int size, int aIndex, int encrypt, int
 
 	switch (head)
 	{
+		case HELPER_PROTOCOL_HEAD:
+		{
+			if (size >= (int)sizeof(PSBMSG_HEAD))
+			{
+				gHelperManager.ProtocolCore(lpMsg[3], lpMsg, size, aIndex);
+			}
+
+			break;
+		}
+
 		case 0x00:
 		{
 			CGChatRecv((PMSG_CHAT_RECV*)lpMsg, aIndex);

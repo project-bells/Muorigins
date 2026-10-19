@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "HelperManager.h"
 #include "GameMain.h"
 #include "BattleSoccerManager.h"
 #include "DSProtocol.h"
@@ -130,6 +131,7 @@ void CALLBACK QueueTimerCallback(PVOID lpParameter, BOOLEAN TimerOrWaitFired)
 		case QUEUE_TIMER_MONSTER:
 		{
 			gObjectManager.ObjectMonsterAndMsgProc();
+			gHelperManager.Run();
 
 			break;
 		}
