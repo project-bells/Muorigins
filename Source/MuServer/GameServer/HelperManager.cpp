@@ -192,6 +192,10 @@ void CHelperManager::ProcessLoot(LPOBJ lpObj, HELPER_RUNTIME& runtime, DWORD tic
 		if (view.state == 0 || view.type != OBJECT_ITEM || MAP_ITEM_RANGE(view.index) == 0) continue;
 		CMapItem& item = gMap[lpObj->Map].m_Item[view.index];
 		if (item.IsItem() == 0 || item.m_Live == 0 || item.m_Give != 0 || !this->MatchLootFilter(item, runtime.settings.lootFlags)) continue;
+		if (OBJECT_RANGE(item.m_UserIndex) != 0 && item.m_LootTime > tick && item.m_UserIndex != lpObj->Index)
+		{
+			if (item.m_QuestItem != 0 || OBJECT_RANGE(lpObj->PartyNumber) == 0 || lpObj->PartyNumber != gObj[item.m_UserIndex].PartyNumber) continue;
+		}
 		int dx = item.m_X - lpObj->X, dy = item.m_Y - lpObj->Y;
 		int distance = (dx * dx) + (dy * dy);
 		if (distance <= maximum && distance < bestDistance) { bestDistance = distance; bestIndex = view.index; }
