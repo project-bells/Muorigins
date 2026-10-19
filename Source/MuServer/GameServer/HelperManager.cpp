@@ -104,6 +104,12 @@ void CHelperManager::ProtocolCore(BYTE subCode, BYTE* lpMsg, int size, int aInde
 		{
 			LPOBJ lpObj = &gObj[aIndex];
 			if (!runtime.configured || lpObj->Live == 0 || lpObj->Teleport != 0 || lpObj->Interface.use != 0) { this->SendStatus(aIndex, HELPER_RESULT_NOT_READY); return; }
+			if ((runtime.settings.primarySkill != SKILL_NONE && gSkillManager.GetSkill(lpObj, runtime.settings.primarySkill) == 0) ||
+				(runtime.settings.secondarySkill != SKILL_NONE && gSkillManager.GetSkill(lpObj, runtime.settings.secondarySkill) == 0))
+			{
+				this->SendStatus(aIndex, HELPER_RESULT_SKILL_NOT_LEARNED);
+				return;
+			}
 			runtime.active = true;
 			runtime.originX = lpObj->X;
 			runtime.originY = lpObj->Y;
